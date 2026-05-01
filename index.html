@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAISON — 시간을 초월하는 브랜드 경험</title>
+<meta name="description" content="의도와 정성으로 빚어내는 브랜드 경험을 만듭니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ===== 홈 전용 스타일 ===== */
+  .hero {
+    min-height: 100vh;
+    padding: 140px var(--gutter) 80px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .hero-meta .right { display: flex; gap: 32px; }
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(56px, 10vw, 160px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+  .hero-title span { display: block; }
+  .hero-title .italic {
+    font-style: italic;
+    color: var(--accent);
+    margin-left: clamp(20px, 6vw, 80px);
+  }
+  .hero-foot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 80px;
+    align-items: end;
+  }
+  .hero-desc {
+    max-width: 460px;
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .hero-cta {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all .35s;
+  }
+  .hero-cta:hover {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .hero-cta .arrow { transition: transform .35s; }
+  .hero-cta:hover .arrow { transform: translateX(6px); }
+
+  /* ===== Intro 섹션 ===== */
+  .intro {
+    border-top: 1px solid var(--line);
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 100px;
+    align-items: center;
+    padding: 0 var(--gutter);
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .intro-image {
+    aspect-ratio: 4/5;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(139,111,71,0.22), transparent 55%),
+      linear-gradient(135deg, #d6c8ad 0%, #ad9871 60%, #6e573b 100%);
+    border-radius: 4px;
+    position: relative;
+  }
+  .intro-image::after {
+    content: 'IMAGE';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(243,237,226,.55);
+    letter-spacing: 0.3em;
+    font-size: 12px;
+  }
+  .intro-text .eyebrow { margin-bottom: 24px; }
+  .intro-text h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .intro-text h2 .italic { font-style: italic; }
+  .intro-text p {
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  /* ===== Services preview ===== */
+  .services-preview { background: var(--cream-soft); }
+  .services-list {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  .service-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 1.5fr auto;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+    transition: padding-left .4s;
+    cursor: pointer;
+  }
+  .service-row:hover { padding-left: 24px; }
+  .service-row:first-child { border-top: 1px solid var(--line); }
+  .service-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 18px;
+  }
+  .service-name {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+  .service-desc {
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 460px;
+  }
+  .service-arrow {
+    width: 44px; height: 44px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .35s;
+  }
+  .service-row:hover .service-arrow {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+    transform: rotate(-45deg);
+  }
+
+  @media (max-width: 860px) {
+    .hero-title .italic { margin-left: 0; }
+    .hero-foot { grid-template-columns: 1fr; }
+    .hero-cta { justify-self: start; }
+    .intro-grid { grid-template-columns: 1fr; gap: 50px; }
+    .service-row { grid-template-columns: 50px 1fr auto; gap: 20px; }
+    .service-desc { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 네비게이션 ===== -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">M<span class="dot"></span>AISON</a>
+  <button class="nav-toggle" id="navToggle">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ===== 히어로 ===== -->
+<section class="hero">
+  <div class="hero-meta rise rise-1">
+    <span>EST. 2024</span>
+    <div class="right">
+      <span>BUSAN · KOREA</span>
+      <span>VOL. 01</span>
+    </div>
+  </div>
+
+  <h1 class="hero-title">
+    <span class="rise rise-2">의도로 빚어낸,</span>
+    <span class="italic rise rise-3">시간을 초월하는</span>
+    <span class="rise rise-4">브랜드의 결.</span>
+  </h1>
+
+  <div class="hero-foot rise rise-4">
+    <p class="hero-desc">
+      MAISON은 정성스럽게 다듬어진 브랜드 경험을 통해
+      고객의 일상에 깊은 울림을 선사하는 작은 집입니다.
+    </p>
+    <a href="about.html" class="hero-cta">
+      Discover the story
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== Intro ===== -->
+<section class="intro">
+  <div class="intro-grid">
+    <div class="intro-image"></div>
+    <div class="intro-text">
+      <p class="eyebrow">— 우리의 철학</p>
+      <h2>유행을 따르지 않는, <span class="italic">고요한 아름다움.</span></h2>
+      <p>
+        빠르게 흐르는 시대 속에서, 우리는 한 번 더 멈춰 서서
+        진정으로 가치 있는 것이 무엇인지 묻습니다.
+      </p>
+      <p>
+        한 켤레의 신발, 한 잔의 커피, 한 페이지의 디자인 —
+        모든 작은 순간에 깃든 정성을 믿습니다.
+        그것이 우리가 만드는 모든 것의 시작점입니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services preview ===== -->
+<section class="services-preview">
+  <div class="container">
+    <div class="section-head">
+      <h2>우리가 하는 <span class="italic">일</span></h2>
+      <p class="lead">
+        브랜드 정체성에서 공간 디자인까지, 깊이 있는 시선으로
+        하나의 결을 가진 결과물을 만들어 갑니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="services-list">
+    <a href="services.html" class="service-row">
+      <span class="service-num">01</span>
+      <span class="service-name">Brand Identity</span>
+      <span class="service-desc">로고, 컬러, 타이포그래피 — 브랜드의 본질을 담은 시각 언어를 설계합니다.</span>
+      <span class="service-arrow">→</span>
+    </a>
+    <a href="services.html" class="service-row">
+      <span class="service-num">02</span>
+      <span class="service-name">Space Design</span>
+      <span class="service-desc">방문하는 사람의 감각을 깨우는 공간 — 머무는 시간이 곧 경험이 되도록.</span>
+      <span class="service-arrow">→</span>
+    </a>
+    <a href="services.html" class="service-row">
+      <span class="service-num">03</span>
+      <span class="service-name">Digital Craft</span>
+      <span class="service-desc">웹사이트와 디지털 경험을 통해 브랜드의 이야기를 정교하게 전달합니다.</span>
+      <span class="service-arrow">→</span>
+    </a>
+    <a href="services.html" class="service-row">
+      <span class="service-num">04</span>
+      <span class="service-name">Consulting</span>
+      <span class="service-desc">방향을 잃은 브랜드에게 다시 길을 그려주는 동행자 — 그게 우리의 역할입니다.</span>
+      <span class="service-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== 푸터 ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>MAISON<span style="color:var(--accent)">.</span></h3>
+        <p>의도와 정성으로 빚어내는 브랜드 경험. 부산에서 시작된 작은 집의 이야기.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li>부산광역시 ○○구</li>
+          <li>○○로 00, 0층</li>
+          <li>화–일 11:00–20:00</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@maison.kr">hello@maison.kr</a></li>
+          <li><a href="tel:+82510000000">+82 51 000 0000</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MAISON. All rights reserved.</span>
+      <span>Crafted with intention.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 스크롤 시 nav 보더
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+  // 모바일 메뉴
+  document.getElementById('navToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

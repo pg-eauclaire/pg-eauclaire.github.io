@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>오클레어 치유농원 — 오늘, 행복을 담다</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&amp;family=Noto+Serif+KR:wght@300;400;500;600;700&amp;family=Gowun+Dodum&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --cream: #F6F1E6; --cream-light: #FBF8F1;
+  --ink: #2A332D; --ink-soft: #4D5950;
+  --terracotta: #C4623A; --terracotta-soft: #D9876A;
+  --sage: #8B9D80; --sage-light: #C4CFB9;
+  --beige: #E8DDC9; --line: #D6CDB8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Gowun Dodum', 'Noto Serif KR', serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+.nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 20px 48px; background: rgba(246,241,230,0.92); backdrop-filter: blur(8px); z-index: 100; border-bottom: 1px solid rgba(214,205,184,0.4); }
+.nav-brand { font-family: 'Noto Serif KR', serif; font-weight: 500; font-size: 18px; letter-spacing: 0.05em; }
+.nav-brand small { display: block; font-size: 10px; letter-spacing: 0.3em; color: var(--sage); margin-top: 2px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: var(--ink-soft); text-decoration: none; font-size: 14px; letter-spacing: 0.05em; transition: color 0.3s; }
+.nav-links a:hover { color: var(--terracotta); }
+@media (max-width: 900px) { .nav { padding: 16px 20px; } .nav-links { display: none; } }
+
+.hero { height: 100vh; min-height: 640px; position: relative; background-image: linear-gradient(180deg, rgba(20,30,25,0.15) 0%, rgba(20,30,25,0.55) 100%), url('img/image_01.jpg'); background-size: cover; background-position: center; display: flex; align-items: flex-end; padding: 0 48px 88px; color: #fff; }
+.hero-content { max-width: 720px; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 0.5em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: 28px; font-family: 'Noto Serif KR', serif; font-weight: 300; }
+.hero-eyebrow::before { content: ""; display: inline-block; width: 32px; height: 1px; background: rgba(255,255,255,0.6); vertical-align: middle; margin-right: 16px; }
+.hero h1 { font-family: 'Noto Serif KR', serif; font-size: clamp(42px, 6vw, 78px); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 20px; }
+.hero h1 em { font-style: normal; color: #F4C896; font-weight: 300; font-family: 'Gowun Batang', serif; }
+.hero-tag { font-size: 17px; font-weight: 300; opacity: 0.92; max-width: 520px; letter-spacing: 0.02em; }
+.hero-meta { position: absolute; bottom: 88px; right: 48px; text-align: right; font-size: 12px; letter-spacing: 0.2em; color: rgba(255,255,255,0.75); }
+.hero-meta div + div { margin-top: 6px; }
+@media (max-width: 768px) { .hero { padding: 0 20px 60px; } .hero-meta { display: none; } }
+
+section { padding: 120px 48px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label { font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 24px; font-weight: 500; }
+.section-label::before { content: "—"; margin-right: 12px; color: var(--sage); }
+h2.section-title { font-family: 'Noto Serif KR', serif; font-size: clamp(32px, 4.5vw, 52px); font-weight: 400; line-height: 1.25; margin-bottom: 28px; letter-spacing: -0.01em; }
+@media (max-width: 768px) { section { padding: 80px 20px; } }
+
+.intro { background: var(--cream-light); text-align: center; position: relative; overflow: hidden; }
+.intro::before { content: ""; position: absolute; top: 50px; left: 50%; width: 1px; height: 60px; background: var(--terracotta); transform: translateX(-50%); }
+.intro-mark { font-family: 'Noto Serif KR', serif; font-size: 14px; letter-spacing: 0.3em; color: var(--sage); margin-bottom: 12px; margin-top: 30px; }
+.intro h2 { font-family: 'Noto Serif KR', serif; font-size: clamp(26px, 3.5vw, 38px); font-weight: 400; line-height: 1.5; max-width: 760px; margin: 0 auto 36px; color: var(--ink); }
+.intro h2 em { font-style: normal; color: var(--terracotta); font-family: 'Gowun Batang', serif; }
+.intro p { max-width: 600px; margin: 0 auto; color: var(--ink-soft); font-size: 16px; line-height: 1.9; }
+
+.about { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
+.about-img { aspect-ratio: 4/5; background-image: url('img/image_02.jpg'); background-size: cover; background-position: center; position: relative; }
+.about-img::after { content: "Eau Claire"; position: absolute; bottom: -16px; right: -16px; background: var(--cream); padding: 14px 24px; font-family: 'Noto Serif KR', serif; font-style: italic; font-size: 18px; color: var(--terracotta); letter-spacing: 0.05em; }
+.about-text p { margin-bottom: 20px; color: var(--ink-soft); font-size: 16px; line-height: 1.95; }
+.about-text p strong { color: var(--ink); font-weight: 500; }
+.about-quote { margin-top: 32px; padding: 24px 28px; border-left: 2px solid var(--terracotta); font-family: 'Gowun Batang', serif; font-style: italic; color: var(--ink); background: var(--cream-light); font-size: 17px; }
+@media (max-width: 768px) { .about { grid-template-columns: 1fr; gap: 48px; } }
+
+.programs { background: linear-gradient(180deg, var(--cream) 0%, var(--beige) 100%); }
+.program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; margin-top: 60px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.program-card { padding: 40px 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--cream-light); transition: background 0.4s; position: relative; }
+.program-card:hover { background: #fff; }
+.program-num { font-family: 'Noto Serif KR', serif; font-size: 13px; font-weight: 300; color: var(--terracotta); letter-spacing: 0.3em; margin-bottom: 24px; display: block; }
+.program-title { font-family: 'Noto Serif KR', serif; font-size: 20px; font-weight: 500; margin-bottom: 14px; line-height: 1.4; color: var(--ink); }
+.program-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.75; }
+
+.image-break { height: 70vh; min-height: 480px; background-image: url('img/image_03.jpg'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
+.image-break-text { position: absolute; bottom: 60px; left: 60px; color: #fff; font-family: 'Gowun Batang', serif; font-style: italic; font-size: 22px; text-shadow: 0 2px 20px rgba(0,0,0,0.4); background: rgba(42,51,45,0.4); backdrop-filter: blur(4px); padding: 18px 28px; }
+@media (max-width: 768px) { .image-break { background-attachment: scroll; height: 50vh; } .image-break-text { bottom: 24px; left: 24px; right: 24px; font-size: 16px; padding: 14px 18px; } }
+
+.audience { background: var(--cream-light); }
+.audience-list { margin-top: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.audience-item { padding: 36px 0; border-top: 1px solid var(--line); display: flex; align-items: baseline; gap: 24px; }
+.audience-item:nth-child(odd) { padding-right: 40px; }
+.audience-item:nth-child(even) { padding-left: 40px; border-left: 1px solid var(--line); }
+.audience-item:last-child, .audience-item:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+.audience-num { font-family: 'Noto Serif KR', serif; font-size: 14px; color: var(--terracotta); font-weight: 400; flex-shrink: 0; letter-spacing: 0.1em; }
+.audience-text { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 400; color: var(--ink); line-height: 1.5; }
+@media (max-width: 768px) { .audience-list { grid-template-columns: 1fr; } .audience-item:nth-child(odd), .audience-item:nth-child(even) { padding: 28px 0; border-left: none; } .audience-item { border-top: 1px solid var(--line); } }
+
+.facilities { background: var(--ink); color: var(--cream); }
+.facilities .section-label { color: var(--terracotta-soft); }
+.facilities .section-label::before { color: var(--sage-light); }
+.facilities h2 { color: var(--cream); }
+.fac-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 72px; }
+.fac-block h3 { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 500; color: #F4C896; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid rgba(244,200,150,0.3); letter-spacing: 0.05em; }
+.fac-block ul { list-style: none; }
+.fac-block li { padding: 12px 0; font-size: 15px; color: rgba(246,241,230,0.85); border-bottom: 1px dotted rgba(246,241,230,0.15); display: flex; align-items: center; gap: 14px; }
+.fac-block li::before { content: "◦"; color: var(--terracotta-soft); font-size: 14px; }
+@media (max-width: 768px) { .fac-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+/* ======== 사진첩 ======== */
+.album { background: var(--cream-light); }
+.album-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; margin-bottom: 48px; }
+.album-header-left { flex: 1; min-width: 280px; }
+.album-meta { text-align: right; font-family: 'Noto Serif KR', serif; }
+.album-meta-num { font-size: 56px; font-weight: 300; color: var(--terracotta); line-height: 1; }
+.album-meta-label { font-size: 11px; letter-spacing: 0.3em; color: var(--sage); margin-top: 4px; text-transform: uppercase; }
+.filter-tabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 36px; border-bottom: 1px solid var(--line); padding-bottom: 0; }
+.filter-tab { background: none; border: none; padding: 14px 22px; font-family: 'Gowun Dodum', sans-serif; font-size: 14px; color: var(--ink-soft); cursor: pointer; position: relative; letter-spacing: 0.05em; transition: color 0.2s; }
+.filter-tab:hover { color: var(--terracotta); }
+.filter-tab.active { color: var(--terracotta); font-weight: 600; }
+.filter-tab.active::after { content: ""; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--terracotta); }
+.filter-tab .count { font-size: 11px; color: var(--sage); margin-left: 4px; }
+.album-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; grid-auto-flow: dense; }
+.album-item { position: relative; overflow: hidden; background: var(--beige); cursor: pointer; transition: transform 0.5s ease; }
+.album-item.tall { grid-row: span 2; }
+.album-item.wide { grid-column: span 2; }
+.album-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s ease; aspect-ratio: 4/3; }
+.album-item.tall img { aspect-ratio: 3/5; }
+.album-item.wide img { aspect-ratio: 16/8; }
+.album-item:hover img { transform: scale(1.06); }
+.album-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(20,30,25,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; color: #fff; opacity: 0; transition: opacity 0.4s; }
+.album-item:hover .album-overlay { opacity: 1; }
+.album-cat { font-size: 10px; letter-spacing: 0.3em; color: #F4C896; margin-bottom: 8px; text-transform: uppercase; }
+.album-caption { font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 500; line-height: 1.4; margin-bottom: 4px; }
+.album-date { font-size: 12px; opacity: 0.7; }
+.album-more { text-align: center; margin-top: 56px; }
+.album-more a { display: inline-block; padding: 14px 36px; border: 1px solid var(--terracotta); color: var(--terracotta); text-decoration: none; font-size: 13px; letter-spacing: 0.2em; transition: all 0.3s; font-family: 'Noto Serif KR', serif; }
+.album-more a:hover { background: var(--terracotta); color: var(--cream-light); }
+@media (max-width: 900px) { .album-grid { grid-template-columns: repeat(2, 1fr); } .album-item.wide { grid-column: span 2; } .album-item.tall { grid-row: span 1; } }
+@media (max-width: 600px) { .album-grid { grid-template-columns: 1fr; gap: 12px; } .album-item.wide { grid-column: span 1; } .album-overlay { opacity: 1; background: linear-gradient(180deg, transparent 40%, rgba(20,30,25,0.85) 100%); } }
+
+/* ======== 게시판 ======== */
+.notice { background: var(--cream); }
+.notice-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; margin-bottom: 48px; }
+.notice-header-left { flex: 1; min-width: 280px; }
+.notice-list { border-top: 2px solid var(--ink); }
+.notice-item { display: grid; grid-template-columns: 100px 90px 1fr auto; gap: 28px; padding: 26px 8px; border-bottom: 1px solid var(--line); align-items: center; cursor: pointer; transition: background 0.25s, padding 0.25s; text-decoration: none; color: inherit; }
+.notice-item:hover { background: var(--cream-light); padding-left: 20px; }
+.notice-item:hover .notice-arrow { color: var(--terracotta); transform: translateX(6px); }
+.notice-date { font-family: 'Noto Serif KR', serif; font-size: 13px; color: var(--sage); letter-spacing: 0.05em; }
+.notice-cat { display: inline-block; padding: 5px 12px; font-size: 11px; letter-spacing: 0.15em; border: 1px solid var(--line); color: var(--ink-soft); text-align: center; background: var(--cream-light); }
+.notice-cat-pin { border-color: var(--terracotta); color: var(--terracotta); background: rgba(196,98,58,0.06); }
+.notice-cat-prog { border-color: var(--sage); color: var(--sage); background: rgba(139,157,128,0.08); }
+.notice-cat-diary { border-color: #B89968; color: #8E7041; background: #F8F1E0; }
+.notice-content { min-width: 0; }
+.notice-title { font-family: 'Noto Serif KR', serif; font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.notice-excerpt { font-size: 13px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.6; }
+.notice-arrow { color: var(--sage); font-size: 20px; transition: all 0.3s; }
+.notice-more { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+.notice-more-text { font-size: 13px; color: var(--sage); font-style: italic; }
+.notice-more a { color: var(--ink); text-decoration: none; font-size: 13px; letter-spacing: 0.15em; border-bottom: 1px solid var(--ink); padding-bottom: 4px; transition: color 0.3s, border-color 0.3s; }
+.notice-more a:hover { color: var(--terracotta); border-color: var(--terracotta); }
+@media (max-width: 768px) { .notice-item { grid-template-columns: 1fr; gap: 8px; padding: 20px 8px; } .notice-item:hover { padding-left: 8px; } .notice-cat { justify-self: flex-start; } .notice-arrow { display: none; } .notice-title { white-space: normal; } .notice-excerpt { white-space: normal; } }
+
+.contact { background: var(--cream-light); text-align: center; }
+.contact-card { max-width: 760px; margin: 64px auto 0; background: var(--cream); padding: 64px 48px; border: 1px solid var(--line); position: relative; }
+.contact-card::before, .contact-card::after { content: ""; position: absolute; width: 40px; height: 40px; border: 1px solid var(--terracotta); }
+.contact-card::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.contact-card::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+.contact-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--beige); text-align: left; gap: 20px; }
+.contact-row:last-child { border-bottom: none; }
+.contact-label { font-family: 'Noto Serif KR', serif; font-size: 12px; letter-spacing: 0.3em; color: var(--sage); text-transform: uppercase; flex-shrink: 0; width: 110px; padding-top: 4px; }
+.contact-value { font-size: 16px; color: var(--ink); text-align: right; line-height: 1.6; }
+.contact-value a { color: var(--terracotta); text-decoration: none; }
+.contact-value a:hover { text-decoration: underline; }
+.contact-cta { margin-top: 40px; padding: 20px; background: var(--terracotta); color: var(--cream-light); font-family: 'Noto Serif KR', serif; font-size: 15px; letter-spacing: 0.1em; }
+@media (max-width: 768px) { .contact-card { padding: 40px 24px; } .contact-row { flex-direction: column; gap: 6px; } .contact-value { text-align: left; font-size: 15px; } .contact-label { width: auto; } }
+
+footer { background: var(--ink); color: rgba(246,241,230,0.6); text-align: center; padding: 40px 20px; font-size: 13px; letter-spacing: 0.1em; }
+footer .brand { font-family: 'Noto Serif KR', serif; font-size: 16px; color: var(--cream); letter-spacing: 0.2em; margin-bottom: 8px; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.hero-content > * { animation: fadeUp 1s ease-out backwards; }
+.hero-eyebrow { animation-delay: 0.2s; }
+.hero h1 { animation-delay: 0.5s; }
+.hero-tag { animation-delay: 0.9s; }
+
+/* Requested font-size adjustment: description text and menu text +2px; section titles unchanged. */
+.nav-links a { font-size: 16px; }
+.hero-tag { font-size: 19px; }
+.intro p { font-size: 18px; }
+.about-text p { font-size: 18px; }
+.about-quote { font-size: 19px; }
+.program-desc { font-size: 16px; }
+.image-break-text { font-size: 24px; }
+.audience-text { font-size: 20px; }
+.fac-block li { font-size: 17px; }
+.filter-tab { font-size: 16px; }
+.album-caption { font-size: 18px; }
+.notice-excerpt { font-size: 15px; }
+.contact-value { font-size: 18px; }
+.contact-cta { font-size: 17px; }
+@media (max-width: 768px) {
+  .image-break-text { font-size: 18px; }
+  .contact-value { font-size: 17px; }
+}
+
+.album-meta-brand {
+  font-size: 34px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .album-meta { text-align: left; }
+  .album-meta-brand { font-size: 28px; }
+}
+
+
+/* ======== Final polish: refined, warm, editorial finish ======== */
+:root {
+  --shadow-soft: 0 18px 50px rgba(42, 51, 45, 0.10);
+  --shadow-card: 0 14px 34px rgba(42, 51, 45, 0.12);
+  --shadow-hover: 0 24px 60px rgba(42, 51, 45, 0.18);
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(217,135,106,0.10), transparent 34%),
+    linear-gradient(180deg, var(--cream-light) 0%, var(--cream) 42%, var(--cream-light) 100%);
+}
+
+.nav {
+  padding: 18px 52px;
+  background: rgba(251,248,241,0.86);
+  border-bottom: 1px solid rgba(214,205,184,0.58);
+  box-shadow: 0 10px 32px rgba(42,51,45,0.07);
+}
+
+.nav-links a {
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.28s ease;
+  opacity: 0.7;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+section {
+  position: relative;
+}
+
+.section-label {
+  color: var(--terracotta);
+  letter-spacing: 0.42em;
+}
+
+h2.section-title {
+  letter-spacing: -0.025em;
+}
+
+.program-card,
+.fac-block,
+.notice-item,
+.contact-card {
+  box-shadow: 0 12px 34px rgba(42,51,45,0.06);
+}
+
+.program-card,
+.fac-block,
+.notice-item {
+  transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease, background 0.32s ease;
+}
+
+.program-card:hover,
+.fac-block:hover,
+.notice-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.album {
+  background:
+    linear-gradient(180deg, rgba(251,248,241,1) 0%, rgba(246,241,230,0.82) 100%);
+}
+
+.album-header {
+  padding: 26px 0 8px;
+  border-top: 1px solid rgba(214,205,184,0.60);
+}
+
+.album-header-left p {
+  max-width: 680px;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.album-meta {
+  min-width: 210px;
+  padding: 22px 24px;
+  border: 1px solid rgba(214,205,184,0.70);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.40);
+  box-shadow: 0 12px 32px rgba(42,51,45,0.06);
+  text-align: center;
+}
+
+.album-meta-num.album-meta-brand {
+  font-family: 'Gowun Batang', 'Noto Serif KR', serif;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  color: var(--terracotta);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.album-meta-label {
+  margin-top: 6px;
+  letter-spacing: 0.32em;
+}
+
+.filter-tabs {
+  display: inline-flex;
+  gap: 8px;
+  margin-bottom: 34px;
+  padding: 8px;
+  border: 1px solid rgba(214,205,184,0.68);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.42);
+  box-shadow: 0 10px 30px rgba(42,51,45,0.05);
+}
+
+.filter-tab {
+  border-radius: 999px;
+  padding: 11px 20px;
+  transition: color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.filter-tab:hover {
+  background: rgba(196,98,58,0.08);
+  transform: translateY(-1px);
+}
+
+.filter-tab.active {
+  background: var(--terracotta);
+  color: var(--cream-light);
+  box-shadow: 0 8px 20px rgba(196,98,58,0.20);
+}
+
+.filter-tab.active::after {
+  display: none;
+}
+
+.filter-tab.active .count {
+  color: rgba(255,255,255,0.78);
+}
+
+.album-grid {
+  gap: 20px;
+}
+
+.album-item {
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+  background: var(--beige);
+  border: 1px solid rgba(255,255,255,0.45);
+  transform: translateZ(0);
+}
+
+.album-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.20);
+  pointer-events: none;
+}
+
+.album-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.album-item img {
+  filter: saturate(0.96) contrast(1.03);
+}
+
+.album-overlay {
+  background:
+    linear-gradient(180deg, rgba(20,30,25,0.00) 34%, rgba(20,30,25,0.30) 62%, rgba(20,30,25,0.88) 100%);
+  padding: 24px;
+  opacity: 1;
+}
+
+.album-cat {
+  display: inline-flex;
+  align-self: flex-start;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(246,241,230,0.16);
+  color: #F7D4AA;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  backdrop-filter: blur(4px);
+}
+
+.album-caption {
+  font-size: 17px;
+  line-height: 1.42;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.28);
+  margin-bottom: 0;
+}
+
+.album-date {
+  display: none !important;
+}
+
+.album-more {
+  margin-top: 64px;
+}
+
+.album-more a {
+  border: none;
+  border-radius: 999px;
+  padding: 16px 38px;
+  color: var(--cream-light);
+  background: var(--ink);
+  box-shadow: 0 14px 30px rgba(42,51,45,0.16);
+}
+
+.album-more a:hover {
+  background: var(--terracotta);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(196,98,58,0.22);
+}
+
+.contact-card {
+  border-radius: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 900px) {
+  .nav {
+    padding: 16px 22px;
+  }
+  .album-meta {
+    width: 100%;
+    min-width: 0;
+    border-radius: 24px;
+  }
+  .filter-tabs {
+    display: flex;
+    width: 100%;
+    border-radius: 22px;
+  }
+  .filter-tab {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+
+@media (max-width: 600px) {
+  .album-grid {
+    gap: 16px;
+  }
+  .album-item {
+    border-radius: 20px;
+  }
+  .album-item::after {
+    border-radius: 20px;
+  }
+  .album-overlay {
+    padding: 20px;
+  }
+  .album-caption {
+    font-size: 16px;
+  }
+}
+</style>
+<style id="final-polish-css">
+/* ===== Final polish: refined layout, cards, gallery, and mobile spacing ===== */
+:root {
+  --shadow-soft: 0 14px 34px rgba(42, 51, 45, 0.10);
+  --shadow-hover: 0 22px 52px rgba(42, 51, 45, 0.16);
+  --radius-lg: 26px;
+  --radius-md: 18px;
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(217, 135, 106, 0.10), transparent 26%),
+    radial-gradient(circle at 90% 10%, rgba(139, 157, 128, 0.12), transparent 30%),
+    var(--cream);
+}
+
+.nav {
+  padding: 18px clamp(22px, 4vw, 56px);
+  background: rgba(251, 248, 241, 0.86);
+  backdrop-filter: blur(16px) saturate(1.12);
+  -webkit-backdrop-filter: blur(16px) saturate(1.12);
+  border-bottom: 1px solid rgba(214, 205, 184, 0.55);
+  box-shadow: 0 10px 28px rgba(42, 51, 45, 0.08);
+}
+.nav-brand { font-size: 20px; }
+.nav-brand small { font-size: 11px; }
+.nav-links { gap: 8px; align-items: center; }
+.nav-links a {
+  position: relative;
+  padding: 9px 12px;
+  border-radius: 999px;
+  font-size: 16px;
+  transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+.nav-links a:hover {
+  color: var(--terracotta);
+  background: rgba(196, 98, 58, 0.08);
+  transform: translateY(-1px);
+}
+
+section { scroll-margin-top: 92px; }
+.section-title { text-wrap: balance; }
+.section-title + p,
+.album-header p,
+.notice-header-left p,
+.contact-intro {
+  text-wrap: pretty;
+}
+
+.program-grid { gap: 18px; }
+.program-card {
+  border: 1px solid rgba(214, 205, 184, 0.78);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 26px rgba(42, 51, 45, 0.06);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  background: #fffaf2;
+}
+.program-num { color: var(--terracotta); }
+
+.fac-block {
+  padding: 28px;
+  border: 1px solid rgba(244, 200, 150, 0.18);
+  border-radius: var(--radius-lg);
+  background: rgba(246, 241, 230, 0.06);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
+}
+.fac-block li { font-size: 17px; }
+
+.filter-tabs {
+  gap: 10px;
+  border-bottom: none;
+  margin-bottom: 34px;
+}
+.filter-tab {
+  border: 1px solid rgba(214, 205, 184, 0.95);
+  border-radius: 999px;
+  background: rgba(246, 241, 230, 0.72);
+  padding: 12px 18px;
+  font-size: 16px;
+  box-shadow: 0 6px 16px rgba(42, 51, 45, 0.04);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.filter-tab:hover {
+  transform: translateY(-2px);
+  background: rgba(196, 98, 58, 0.08);
+  border-color: rgba(196, 98, 58, 0.35);
+}
+.filter-tab.active {
+  color: #fff;
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  box-shadow: 0 12px 26px rgba(196, 98, 58, 0.22);
+}
+.filter-tab.active::after { display: none; }
+.filter-tab .count { font-size: 13px; }
+.filter-tab.active .count { color: rgba(255, 255, 255, 0.78); }
+
+.album-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.album-item {
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+  isolation: isolate;
+  transform: translateY(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.album-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+.album-item img { transition: transform 0.9s ease, filter 0.45s ease; }
+.album-item:hover img {
+  transform: scale(1.055);
+  filter: saturate(1.05) contrast(1.02);
+}
+.album-overlay {
+  padding: 24px;
+  background: linear-gradient(180deg, transparent 42%, rgba(20, 30, 25, 0.90) 100%);
+  transform: translateY(4px);
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+.album-item:hover .album-overlay {
+  transform: translateY(0);
+  background: linear-gradient(180deg, transparent 34%, rgba(20, 30, 25, 0.94) 100%);
+}
+.album-cat { letter-spacing: 0.18em; }
+.album-caption { font-size: 19px; }
+
+.notice-list { border-top: none; display: grid; gap: 12px; }
+.notice-item {
+  border: 1px solid rgba(214, 205, 184, 0.82);
+  border-radius: var(--radius-md);
+  background: rgba(251, 248, 241, 0.68);
+  padding: 24px 22px;
+  box-shadow: 0 8px 22px rgba(42, 51, 45, 0.045);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, padding 0.3s ease;
+}
+.notice-item:hover {
+  padding-left: 28px;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+  background: #fffaf2;
+}
+
+.contact-card {
+  border-radius: 30px;
+  background: rgba(251, 248, 241, 0.78);
+  box-shadow: var(--shadow-soft);
+}
+.contact-card::before,
+.contact-card::after { border-radius: 4px; }
+
+@media (max-width: 900px) {
+  .nav-brand { font-size: 18px; }
+  .album-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .album-item.wide { grid-column: span 2; }
+  .program-card { padding: 34px 26px; }
+  .notice-item { grid-template-columns: 1fr; gap: 10px; }
+}
+
+@media (max-width: 560px) {
+  .filter-tabs { gap: 8px; }
+  .filter-tab { padding: 10px 14px; font-size: 15px; }
+  .album-grid { grid-template-columns: 1fr; }
+  .album-item.wide,
+  .album-item.tall { grid-column: auto; grid-row: auto; }
+  .album-item img,
+  .album-item.wide img,
+  .album-item.tall img { aspect-ratio: 4 / 3; }
+  .album-caption { font-size: 18px; }
+  .contact-card { padding: 42px 26px; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-brand">오클레어 치유농원<small>EAU CLAIRE</small></div>
+<div class="nav-links">
+<a href="#about">소개</a>
+<a href="#programs">프로그램</a>
+<a href="#facilities">시설</a>
+<a href="#album">사진첩</a>
+<a href="#notice">게시판</a>
+<a href="#contact">오시는 길</a>
+</div>
+</nav>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">EAU CLAIRE HEALING GARDEN · 풍기</div>
+<h1>오늘,<br/><em>행복을 담다.</em></h1>
+<p class="hero-tag">소백산 자락 구름과 맑은 물이 만나는 곳, <br/>꽃과 허브가 가득한 치유농원에서 건네는 작은 위로.</p>
+</div>
+<div class="hero-meta">
+<div>경북 영주시 풍기읍</div>
+<div>SINCE — 治癒農園</div>
+</div>
+</section>
+<section class="intro">
+<div class="container">
+<div class="intro-mark">序 — 시작하며</div>
+<h2>맑은 물처럼 조용히 스며드는 자연의 힘으로,<br/>사람의 마음과 일상을 <em>회복</em>합니다.</h2>
+<p>오클레어(Eau Claire)는 ‘맑은 물’이라는 뜻을 담고 있습니다.<br/>오늘, 행복을 담다 — 라는 모토 아래 치유농업을 실천하는 작은 농원입니다.</p>
+</div>
+</section>
+<section id="about">
+<div class="container">
+<div class="about">
+<div aria-label="오클레어 치유농원 야경" class="about-img" role="img"></div>
+<div class="about-text">
+<div class="section-label">ABOUT US</div>
+<h2 class="section-title">소백산 자락,<br/>구름과 맑은 물이 만나는 곳</h2>
+<p>경북 영주시 풍기읍, 소백산 자락에 자리한 <strong>오클레어 치유농원</strong>은 꽃과 허브로 가득한 농장입니다. 사계절 다른 색을 머금은 들판과 술바위약수터의 맑은 공기가 함께하는 자리에서, 치유농업과 쉼 그리고 이야기를 건넵니다.</p>
+<p>바쁜 일상에 지친 분들이 잠시 멈추어, 자연의 속도에 맞춰 다시 자신을 들여다볼 수 있도록 — 작은 정원과 따뜻한 공간을 마련해 두었습니다.</p>
+<div class="about-quote">“천천히 걸어도 괜찮습니다. 이곳의 시간은,<br/>당신을 기다려 주거든요.”</div>
+</div>
+</div>
+</div>
+</section>
+<section class="programs" id="programs">
+<div class="container">
+<div class="section-label">HEALING PROGRAMS</div>
+<h2 class="section-title">우리가 함께 만들어 가는 이야기</h2>
+<p style="max-width:560px; color:var(--ink-soft);">대상과 목적에 맞춘 다섯 가지 치유 프로그램. 자연 속에서 호흡을 고르고, 꽃과 허브를 손끝으로 만나며, 마음을 다시 다듬는 시간입니다.</p>
+<div class="program-grid">
+<div class="program-card"><span class="program-num">PROGRAM 01</span><div class="program-title">어르신 치유농업 프로그램</div><div class="program-desc">손끝의 감각으로 만나는 식물과 흙. 어르신의 마음을 어루만지는 가장 부드러운 시간입니다.</div></div>
+<div class="program-card"><span class="program-num">PROGRAM 02</span><div class="program-title">경도인지장애 · 초기치매<br/>정서 치유</div><div class="program-desc">전문 프로그램으로 감각·기억·정서를 자극하며, 보호자와 함께하는 따뜻한 동행 프로그램입니다.</div></div>
+<div class="program-card"><span class="program-num">PROGRAM 03</span><div class="program-title">중년 여성 힐링 프로그램</div><div class="program-desc">나를 돌보는 시간. 허브 클래스, 정원 산책, 차담 — 잊었던 나의 호흡을 되찾습니다.</div></div>
+<div class="program-card"><span class="program-num">PROGRAM 04</span><div class="program-title">일반인 · 직장인 힐링</div><div class="program-desc">스트레스에서 벗어나 짧고 진하게. 자연 속에서 다시 일상을 시작할 수 있는 에너지를 채웁니다.</div></div>
+<div class="program-card"><span class="program-num">PROGRAM 05</span><div class="program-title">당일 / 1박 2일<br/>치유 숙박 프로그램</div><div class="program-desc">하룻밤의 깊은 쉼. 별빛과 새벽 안개, 정원의 하루를 온전히 느낄 수 있는 머무름의 시간입니다.</div></div>
+</div>
+</div>
+</section>
+<div class="image-break">
+<div class="image-break-text">— 만개한 메리골드, 가장 빛나는 가을의 풍경.</div>
+</div>
+<section class="audience">
+<div class="container">
+<div class="section-label">FOR YOU</div>
+<h2 class="section-title">이런 분들께 추천합니다</h2>
+<div class="audience-list">
+<div class="audience-item"><span class="audience-num">01</span><div class="audience-text">마음이 자주 지치는 분</div></div>
+<div class="audience-item"><span class="audience-num">02</span><div class="audience-text">업무 스트레스에서<br/>벗어나고 싶은 분</div></div>
+<div class="audience-item"><span class="audience-num">03</span><div class="audience-text">부모님과 함께할<br/>치유 공간을 찾는 분</div></div>
+<div class="audience-item"><span class="audience-num">04</span><div class="audience-text">자연 속에서<br/>천천히 쉬고 싶은 분</div></div>
+<div class="audience-item"><span class="audience-num">05</span><div class="audience-text">어르신 · 청소년 ·<br/>가족 단위 방문객</div></div>
+<div class="audience-item"><span class="audience-num">06</span><div class="audience-text">소규모 모임 · 단체<br/>맞춤 프로그램이 필요한 분</div></div>
+</div>
+</div>
+</section>
+<section class="facilities" id="facilities">
+<div class="container">
+<div class="section-label">OUR SPACE</div>
+<h2 class="section-title">자연이 지어 준,<br/>치유의 공간</h2>
+<div class="fac-grid">
+<div class="fac-block"><h3>농장 내 전용 공간</h3><ul><li>실내 학습장</li><li>사무실</li><li>정원</li><li>실내 쉼터</li><li>개구리 연못</li><li>야외 높임화단</li><li>탁 트인 전망</li></ul></div>
+<div class="fac-block"><h3>농장 주변 공유 공간</h3><ul><li>술바위 약수터</li><li>노인봉 등산로</li><li>풍기 인삼시장 (차량 10분)</li><li>소백산 국립공원 진입로</li><li>부석사 (차량 30분)</li></ul></div>
+</div>
+</div>
+</section>
+<!-- ============ 사진첩 ============ -->
+<section class="album" id="album">
+<div class="container">
+<div class="album-header">
+<div class="album-header-left">
+<div class="section-label">PHOTO ALBUM</div>
+<h2 class="section-title">농원의 시간들</h2>
+<p style="max-width:520px; color:var(--ink-soft);">계절이 지나가는 모습, 손님들과의 만남, 그리고 농원의 작은 순간들. 카테고리를 눌러 둘러보세요.</p>
+</div>
+<div class="album-meta"><div class="album-meta-num album-meta-brand">Eau Claire</div><div class="album-meta-label">HEALING GARDEN</div></div>
+</div>
+<div class="filter-tabs">
+<button class="filter-tab active" data-cat="all">전체 <span class="count">43</span></button>
+<button class="filter-tab" data-cat="field">농장 풍경 <span class="count">07</span></button>
+<button class="filter-tab" data-cat="program">프로그램 <span class="count">23</span></button>
+<button class="filter-tab" data-cat="space">공간 <span class="count">13</span></button>
+</div>
+<div class="album-grid">
+<div class="album-item wide" data-cat="field"><img alt="눈 내린 겨울 농장 전경" src="img/image_04.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">하얀 눈이 내려앉은 겨울 농장의 고요한 전경</div></div></div>
+<div class="album-item wide" data-cat="field"><img alt="겨울 들판과 소백산 능선" src="img/image_05.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">눈이 살짝 내려앉은 농장 높임화단과 멀리 보이는 산 풍경</div></div></div>
+<div class="album-item" data-cat="field"><img alt="눈 덮인 술바위 약수터" src="img/image_06.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">겨울 숲길 옆에 자리한 맑은 약수터</div></div></div>
+<div class="album-item wide" data-cat="field"><img alt="겨울 농원 입구와 카페 전경" src="img/image_07.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">눈이 남아 있는 길에서 바라본 오클레어의 전경</div></div></div>
+<div class="album-item wide" data-cat="field"><img alt="눈 내린 농원과 산 전망" src="img/image_08.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">구름 사이 빛이 내려오는 겨울 산자락의 농원 풍경</div></div></div>
+<div class="album-item tall" data-cat="field"><img alt="농장 전경" src="img/image_09.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">소백산을 마주하는 들판</div></div></div>
+<div class="album-item" data-cat="program"><img alt="어르신 프로그램" src="img/image_10.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 어르신</div><div class="album-caption">함께한 치유의 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="치유 클래스" src="img/image_11.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 클래스</div><div class="album-caption">허브와 마주한 손끝</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="실내 학습장" src="img/image_12.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 학습장</div><div class="album-caption">햇볕이 드는 실내 학습장의 오후</div></div></div>
+<div class="album-item" data-cat="field"><img alt="메리골드 들판" src="img/image_03.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 메리골드</div><div class="album-caption">만개한 메리골드의 가을</div></div></div>
+<div class="album-item" data-cat="space"><img alt="농원 건물 야경" src="img/image_02.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 건물</div><div class="album-caption">밤이 깊어진 정원의 빛</div></div></div>
+<div class="album-item" data-cat="program"><img alt="프로그램 준비 재료" src="img/image_13.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">감귤과 자연 재료를 준비하는 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="꽃차 프로그램" src="img/image_14.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">창가에서 즐기는 따뜻한 차 한 잔</div></div></div>
+<div class="album-item wide" data-cat="program"><img alt="단체 치유 프로그램" src="img/image_15.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">함께 준비하고 나누는 농원의 오후</div></div></div>
+<div class="album-item" data-cat="program"><img alt="농원 방문 프로그램" src="img/image_16.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">자연 속에서 시작되는 치유의 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="허브 음료 체험" src="img/image_17.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">꽃과 허브가 담긴 시원한 차</div></div></div>
+<div class="album-item wide" data-cat="program"><img alt="천연 염색 체험" src="img/image_18.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">햇살 아래 물드는 노란 천</div></div></div>
+<div class="album-item" data-cat="program"><img alt="염색 프로그램" src="img/image_19.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">자연의 색을 담아내는 손끝 체험</div></div></div>
+<div class="album-item wide" data-cat="program"><img alt="꽃 수확 체험" src="img/image_20.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">하얀 꽃을 고르고 말리는 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="꽃 건조 프로그램" src="img/image_21.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">오렌지빛 꽃을 정성껏 말리는 과정</div></div></div>
+<div class="album-item" data-cat="program"><img alt="수제청 만들기" src="img/image_22.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">계절 과일을 담은 달콤한 체험</div></div></div>
+<div class="album-item wide" data-cat="program"><img alt="과일청 클래스" src="img/image_23.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">함께 완성한 수제청과 신선한 과일</div></div></div>
+<div class="album-item" data-cat="program"><img alt="정원 치유 프로그램" src="img/image_24.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">비 온 뒤 농원을 바라보는 고요한 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="꽃차 재료 준비" src="img/image_25.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">노란 꽃향기가 가득한 프로그램 재료</div></div></div>
+<div class="album-item" data-cat="program"><img alt="건조 과일 공예" src="img/image_26.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">말린 감귤에 따뜻한 손길을 더하다</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="농원 진입로와 전경" src="img/image_16.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 전경</div><div class="album-caption">소백산을 마주하는 농원의 탁 트인 전경</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="야외 높임화단" src="img/image_27.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 정원</div><div class="album-caption">계절 식물을 준비하는 야외 높임화단</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="전망 쉼터" src="img/image_28.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 전망</div><div class="album-caption">산자락 풍경을 배경으로 머무는 쉼의 자리</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="개구리 연못" src="img/image_29.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 연못</div><div class="album-caption">돌담과 물빛이 어우러진 개구리 연못</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="농원 야경" src="img/image_30.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 야외 공간</div><div class="album-caption">밤에도 따뜻하게 빛나는 농원의 마당</div></div></div>
+<div class="album-item" data-cat="program"><img alt="숲길을 지나 농원으로 향하는 프로그램의 시작" src="img/image_31.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">숲길을 지나 농원으로 향하는 프로그램의 시작</div></div></div>
+<div class="album-item" data-cat="program"><img alt="겨울 주방에서 함께 준비하는 체험 시간" src="img/image_32.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">겨울 주방에서 함께 준비하는 체험 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="눈 내린 창밖을 보며 함께하는 조리 체험" src="img/image_33.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">눈 내린 창밖을 보며 함께하는 조리 체험</div></div></div>
+<div class="album-item" data-cat="program"><img alt="전망대에서 바라본 지역 풍경 체험" src="img/image_34.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">전망대에서 바라본 지역 풍경 체험</div></div></div>
+<div class="album-item" data-cat="program"><img alt="차와 이야기가 오간 실내 프로그램" src="img/image_35.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">차와 이야기가 오간 실내 프로그램</div></div></div>
+<div class="album-item" data-cat="program"><img alt="액자에 담긴 전망대 프로그램의 기억" src="img/image_36.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">액자에 담긴 전망대 프로그램의 기억</div></div></div>
+<div class="album-item" data-cat="program"><img alt="텃밭 활동이 담긴 프로그램 기록" src="img/image_37.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">텃밭 활동이 담긴 프로그램 기록</div></div></div>
+<div class="album-item" data-cat="space"><img alt="유리 티포트와 따뜻한 차가 놓인 테이블 풍경" src="img/image_38.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 쉼</div><div class="album-caption">따뜻한 차 한 잔으로 쉬어 가는 실내 쉼터</div></div></div><div class="album-item" data-cat="space"><img alt="꽃잎이 담긴 시원한 음료를 위에서 내려다본 모습" src="img/image_39.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 티타임</div><div class="album-caption">꽃잎이 더해진 시원한 음료의 순간</div></div></div><div class="album-item" data-cat="space"><img alt="주황색 꽃 위에 앉아 있는 벌의 모습" src="img/image_40.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 정원</div><div class="album-caption">주황빛 꽃 위로 찾아온 작은 손님</div></div></div><div class="album-item" data-cat="space"><img alt="분홍색 코스모스 꽃이 피어 있는 모습" src="img/image_41.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 꽃</div><div class="album-caption">실내를 밝히는 코스모스의 부드러운 색감</div></div></div><div class="album-item" data-cat="space"><img alt="푸른 잎 사이로 맺힌 붉은 열매의 모습" src="img/image_42.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 계절</div><div class="album-caption">계절을 알리는 붉은 열매의 풍경</div></div></div><div class="album-item" data-cat="space"><img alt="분홍색 꽃이 핀 다육식물 화분의 모습" src="img/image_43.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 식물</div><div class="album-caption">창가 화분에서 피어난 작은 다육 꽃</div></div></div></div>
+<div class="album-more"><a data-filter="all" href="#album" id="show-all-photos">전체 사진 보기  →</a></div>
+</div>
+</section>
+<!-- ============ 게시판 ============ -->
+<section class="notice" id="notice">
+<div class="container">
+<div class="notice-header">
+<div class="notice-header-left">
+<div class="section-label">NOTICE  ·  게시판</div>
+<h2 class="section-title">오클레어의 소식</h2>
+<p style="max-width:520px; color:var(--ink-soft);">새로운 프로그램, 계절 안내, 농원의 일상을 전해 드립니다.<br/>더 자세한 소식과 사진은 <a href="https://blog.naver.com/nadalove123" rel="noopener" style="color:var(--accent); text-decoration:underline;" target="_blank">네이버 블로그</a>에서 확인하실 수 있습니다.</p>
+</div>
+</div>
+<div class="notice-list">
+<a class="notice-item" href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank">
+<div class="notice-date">2026 · 04 · 20</div>
+<div><span class="notice-cat notice-cat-pin">공  지</span></div>
+<div class="notice-content">
+<div class="notice-title">5월 라벤더 · 로즈마리 클래스 모집 안내</div>
+<div class="notice-excerpt">봄 향기 가득한 허브를 직접 매만지며 만드는 4주 클래스. 4월 30일까지 카카오 채널로 신청 받습니다.</div>
+</div>
+<div class="notice-arrow">→</div>
+</a>
+<a class="notice-item" href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank">
+<div class="notice-date">2026 · 04 · 05</div>
+<div><span class="notice-cat notice-cat-prog">프로그램</span></div>
+<div class="notice-content">
+<div class="notice-title">어르신 정서 치유 프로그램 5월 일정 안내</div>
+<div class="notice-excerpt">경도인지장애 어르신 대상 8회기 프로그램이 5월 둘째 주부터 시작됩니다. 보호자 상담 함께 진행.</div>
+</div>
+<div class="notice-arrow">→</div>
+</a>
+<a class="notice-item" href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank">
+<div class="notice-date">2026 · 03 · 18</div>
+<div><span class="notice-cat notice-cat-diary">농장 일기</span></div>
+<div class="notice-content">
+<div class="notice-title">올해의 메리골드, 식재를 마쳤습니다</div>
+<div class="notice-excerpt">5천여 그루의 메리골드 모종을 심었습니다. 8월 말부터 절정의 풍경을 만나실 수 있습니다.</div>
+</div>
+<div class="notice-arrow">→</div>
+</a>
+<a class="notice-item" href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank">
+<div class="notice-date">2026 · 03 · 02</div>
+<div><span class="notice-cat notice-cat-pin">공  지</span></div>
+<div class="notice-content">
+<div class="notice-title">봄 시즌 운영 안내 · 사전 예약 부탁드립니다</div>
+<div class="notice-excerpt">3월 첫 주부터 정상 운영합니다. 모든 방문은 사전 예약제이오니 카카오 채널로 문의 부탁드립니다.</div>
+</div>
+<div class="notice-arrow">→</div>
+</a>
+<a class="notice-item" href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank">
+<div class="notice-date">2026 · 02 · 10</div>
+<div><span class="notice-cat notice-cat-prog">프로그램</span></div>
+<div class="notice-content">
+<div class="notice-title">1박 2일 직장인 힐링 패키지 신규 오픈</div>
+<div class="notice-excerpt">주말을 활용한 깊은 쉼. 정원 산책, 허브 클래스, 별빛 명상이 포함된 패키지를 선보입니다.</div>
+</div>
+<div class="notice-arrow">→</div>
+</a>
+</div>
+<div class="notice-more">
+<span class="notice-more-text">— 농원의 일상과 더 많은 소식은 네이버 블로그에서 만나보세요.</span>
+<a href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank">전체 글 보기 →</a>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="container">
+<div class="section-label">VISIT US</div>
+<h2 class="section-title">오시는 길 · 사전 예약 안내</h2>
+<p style="max-width:520px; margin:0 auto; color:var(--ink-soft);">소규모 예약제로 운영됩니다. 방문 전 카카오 채널 또는 전화로 사전 문의 부탁드립니다.</p>
+<div class="contact-card">
+<div class="contact-row"><div class="contact-label">Address</div><div class="contact-value">경북 영주시 풍기읍<br/>안풍로 308번길 119</div></div>
+<div class="contact-row"><div class="contact-label">Tel</div><div class="contact-value"><a href="tel:01033988911">010 — 3398 — 8911</a></div></div>
+<div class="contact-row"><div class="contact-label">Kakao</div><div class="contact-value">오클레어 치유농원 (채널 검색)</div></div>
+<div class="contact-row"><div class="contact-label">Website</div><div class="contact-value"><a href="https://pg-eauclaire.github.io" target="_blank">pg-eauclaire.github.io</a></div></div>
+<div class="contact-row"><div class="contact-label">Blog</div><div class="contact-value"><a href="https://m.blog.naver.com/nadalove123" target="_blank">blog.naver.com/nadalove123</a></div></div>
+<div class="contact-cta">소규모 예약제 운영 · 사전 문의 필수</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="brand">EAU CLAIRE</div>
+<div>오클레어 치유농원 · Eau Claire Healing Garden</div>
+<div style="margin-top:6px;">© 오늘, 행복을 담다 · 풍기 치유농원 오클레어</div>
+</footer>
+<script>
+document.querySelectorAll('.filter-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    var cat = tab.getAttribute('data-cat');
+    document.querySelectorAll('.filter-tab').forEach(function(t) { t.classList.remove('active'); });
+    tab.classList.add('active');
+    document.querySelectorAll('.album-item').forEach(function(item) {
+      if (cat === 'all' || item.getAttribute('data-cat') === cat) { item.style.display = ''; }
+      else { item.style.display = 'none'; }
+    });
+  });
+});
+
+var showAllPhotos = document.getElementById('show-all-photos');
+if (showAllPhotos) {
+  showAllPhotos.addEventListener('click', function() {
+    var allTab = document.querySelector('.filter-tab[data-cat="all"]');
+    if (allTab) {
+      allTab.click();
+    }
+  });
+}
+
+
+document.querySelectorAll('.album-more a[data-filter="all"]').forEach(function(link) {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    var album = document.querySelector('#album');
+    var allTab = document.querySelector('.filter-tab[data-cat="all"]');
+    if (allTab) allTab.click();
+    if (album) album.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>

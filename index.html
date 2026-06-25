@@ -837,35 +837,58 @@ section { scroll-margin-top: 92px; }
 }
 </style>
 
+<style id="lang-toggle-css">
+.lang-toggle {
+  margin-left: 6px;
+  border: 1px solid rgba(196,98,58,0.55);
+  background: rgba(196,98,58,0.06);
+  color: var(--terracotta);
+  font-family: 'Noto Serif KR', serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.lang-toggle:hover { background: var(--terracotta); color: var(--cream-light); transform: translateY(-1px); }
+@media (max-width: 900px) {
+  /* .nav-links is hidden on mobile; lift the toggle out so it stays visible */
+  .nav-links { display: flex !important; gap: 0; }
+  .nav-links a { display: none; }
+  .lang-toggle { display: inline-block; }
+}
+</style>
 </head>
 <body>
 <nav class="nav">
-<div class="nav-brand">오클레어 치유농원<small>EAU CLAIRE</small></div>
+<div class="nav-brand" data-en="Eau Claire Healing Garden<small>EAU CLAIRE</small>">오클레어 치유농원<small>EAU CLAIRE</small></div>
 <div class="nav-links">
-<a href="#about">소개</a>
-<a href="#programs">프로그램</a>
-<a href="#facilities">시설</a>
-<a href="#album">사진첩</a>
-<a href="#notice">게시판</a>
-<a href="#contact">오시는 길</a>
+<a href="#about" data-en="About">소개</a>
+<a href="#programs" data-en="Programs">프로그램</a>
+<a href="#facilities" data-en="Facilities">시설</a>
+<a href="#album" data-en="Gallery">사진첩</a>
+<a href="#notice" data-en="News">게시판</a>
+<a href="#contact" data-en="Visit">오시는 길</a>
+<button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">EN</button>
 </div>
 </nav>
 <section class="hero">
 <div class="hero-content">
-<div class="hero-eyebrow">EAU CLAIRE HEALING GARDEN · 풍기</div>
-<h1>오늘,<br/><em>행복을 담다.</em></h1>
-<p class="hero-tag">소백산 자락 구름과 맑은 물이 만나는 곳, <br/>꽃과 허브가 가득한 치유농원에서 건네는 작은 위로.</p>
+<div class="hero-eyebrow" data-en="EAU CLAIRE HEALING GARDEN · PUNGGI">EAU CLAIRE HEALING GARDEN · 풍기</div>
+<h1 data-en="Today,<br/><em>we hold happiness.</em>">오늘,<br/><em>행복을 담다.</em></h1>
+<p class="hero-tag" data-en="Where clouds meet clear water at the foot of Mt. Sobaek, <br/>a quiet comfort offered by a healing garden full of flowers and herbs.">소백산 자락 구름과 맑은 물이 만나는 곳, <br/>꽃과 허브가 가득한 치유농원에서 건네는 작은 위로.</p>
 </div>
 <div class="hero-meta">
-<div>경북 영주시 풍기읍</div>
-<div>SINCE — 治癒農園</div>
+<div data-en="Punggi-eup, Yeongju, Gyeongbuk">경북 영주시 풍기읍</div>
+<div data-en="SINCE — HEALING FARM">SINCE — 治癒農園</div>
 </div>
 </section>
 <section class="intro">
 <div class="container">
-<div class="intro-mark">序 — 시작하며</div>
-<h2>맑은 물처럼 조용히 스며드는 자연의 힘으로,<br/>사람의 마음과 일상을 <em>회복</em>합니다.</h2>
-<p>오클레어(Eau Claire)는 ‘맑은 물’이라는 뜻을 담고 있습니다.<br/>오늘, 행복을 담다 — 라는 모토 아래 치유농업을 실천하는 작은 농원입니다.</p>
+<div class="intro-mark" data-en="序 — Beginning">序 — 시작하며</div>
+<h2 data-en="With the power of nature that seeps in quietly like clear water,<br/>we help <em>restore</em> the heart and everyday life.">맑은 물처럼 조용히 스며드는 자연의 힘으로,<br/>사람의 마음과 일상을 <em>회복</em>합니다.</h2>
+<p data-en="Eau Claire means &lsquo;clear water.&rsquo;<br/>Under the motto &lsquo;Today, we hold happiness,&rsquo; it is a small farm practicing agro-healing.">오클레어(Eau Claire)는 ‘맑은 물’이라는 뜻을 담고 있습니다.<br/>오늘, 행복을 담다 — 라는 모토 아래 치유농업을 실천하는 작은 농원입니다.</p>
 </div>
 </section>
 <section id="about">
@@ -874,10 +897,10 @@ section { scroll-margin-top: 92px; }
 <div aria-label="오클레어 치유농원 야경" class="about-img" role="img"></div>
 <div class="about-text">
 <div class="section-label">ABOUT US</div>
-<h2 class="section-title">소백산 자락,<br/>구름과 맑은 물이 만나는 곳</h2>
-<p>경북 영주시 풍기읍, 소백산 자락에 자리한 <strong>오클레어 치유농원</strong>은 꽃과 허브로 가득한 농장입니다. 사계절 다른 색을 머금은 들판과 술바위약수터의 맑은 공기가 함께하는 자리에서, 치유농업과 쉼 그리고 이야기를 건넵니다.</p>
-<p>바쁜 일상에 지친 분들이 잠시 멈추어, 자연의 속도에 맞춰 다시 자신을 들여다볼 수 있도록 — 작은 정원과 따뜻한 공간을 마련해 두었습니다.</p>
-<div class="about-quote">“천천히 걸어도 괜찮습니다. 이곳의 시간은,<br/>당신을 기다려 주거든요.”</div>
+<h2 class="section-title" data-en="At the foot of Mt. Sobaek,<br/>where clouds meet clear water">소백산 자락,<br/>구름과 맑은 물이 만나는 곳</h2>
+<p data-en="Located at the foot of Mt. Sobaek in Punggi-eup, Yeongju, Gyeongbuk, <strong>Eau Claire Healing Garden</strong> is a farm full of flowers and herbs. Amid fields that change color through the four seasons and the clear air of Sulbawi Spring, it offers agro-healing, rest, and stories.">경북 영주시 풍기읍, 소백산 자락에 자리한 <strong>오클레어 치유농원</strong>은 꽃과 허브로 가득한 농장입니다. 사계절 다른 색을 머금은 들판과 술바위약수터의 맑은 공기가 함께하는 자리에서, 치유농업과 쉼 그리고 이야기를 건넵니다.</p>
+<p data-en="For those weary from busy daily life, we have prepared a small garden and warm spaces — so you can pause and look within again at nature&rsquo;s pace.">바쁜 일상에 지친 분들이 잠시 멈추어, 자연의 속도에 맞춰 다시 자신을 들여다볼 수 있도록 — 작은 정원과 따뜻한 공간을 마련해 두었습니다.</p>
+<div class="about-quote" data-en="&ldquo;It&rsquo;s alright to walk slowly. Here, time<br/>waits for you.&rdquo;">“천천히 걸어도 괜찮습니다. 이곳의 시간은,<br/>당신을 기다려 주거든요.”</div>
 </div>
 </div>
 </div>
@@ -885,81 +908,81 @@ section { scroll-margin-top: 92px; }
 <section class="programs" id="programs">
 <div class="container">
 <div class="section-label">HEALING PROGRAMS</div>
-<h2 class="section-title">우리가 함께 만들어 가는 이야기</h2>
-<p style="max-width:640px; color:var(--ink-soft);">오클레어가 중요하게 운영할 대표 치유 프로그램 계획안입니다. 정서 안정과 일상 활력 회복을 목표로, 꽃·허브·식용식물을 활용한 활동을 체계적으로 구성했습니다.</p>
+<h2 class="section-title" data-en="A story we create together">우리가 함께 만들어 가는 이야기</h2>
+<p style="max-width:640px; color:var(--ink-soft);" data-en="These are Eau Claire&rsquo;s signature healing program plans. Aimed at emotional stability and restoring everyday vitality, the activities use flowers, herbs, and edible plants in a structured way.">오클레어가 중요하게 운영할 대표 치유 프로그램 계획안입니다. 정서 안정과 일상 활력 회복을 목표로, 꽃·허브·식용식물을 활용한 활동을 체계적으로 구성했습니다.</p>
 
 <div class="featured-programs" aria-label="오클레어 대표 치유 프로그램 계획안">
 <div class="featured-programs-head">
 <div>
 <div class="featured-kicker">SIGNATURE PROGRAMS</div>
-<h3>오클레어어 대표 치유 프로그램</h3>
+<h3 data-en="Eau Claire Signature Healing Programs">오클레어어 대표 치유 프로그램</h3>
 </div>
-<p>프로그램 목적, 대상자, 평가도구, 회기별 활동과 기대효과</p>
+<p data-en="Program purpose, target participants, assessment tools, session activities and expected effects">프로그램 목적, 대상자, 평가도구, 회기별 활동과 기대효과</p>
 </div>
 <div class="featured-program-list">
 <article class="featured-program-card">
 <div class="featured-program-meta">
 <div>
 <span class="featured-badge">REPRESENTATIVE 01</span>
-<h4>꽃피우는 마음, 행복으로의 긍정심리학</h4>
-<p>어르신의 소외감과 우울감 완화, 체력 약화 보완, 감사·회상 활동을 통한 정서 안정과 자기효능감 향상을 목표로 한 치유농업 프로그램입니다.</p>
+<h4 data-en="A Blooming Heart: Positive Psychology Toward Happiness">꽃피우는 마음, 행복으로의 긍정심리학</h4>
+<p data-en="An agro-healing program aimed at easing seniors&rsquo; isolation and depression, supplementing declining strength, and improving emotional stability and self-efficacy through gratitude and reminiscence activities.">어르신의 소외감과 우울감 완화, 체력 약화 보완, 감사·회상 활동을 통한 정서 안정과 자기효능감 향상을 목표로 한 치유농업 프로그램입니다.</p>
 </div>
-<div class="featured-program-tag">어르신 치유농업 · 정서 안정</div>
+<div class="featured-program-tag" data-en="Senior Agro-Healing · Emotional Stability">어르신 치유농업 · 정서 안정</div>
 </div>
 <figure class="featured-program-image">
-<img src="img/program01.png" alt="오클레어 치유프로그램 꽃피우는 마음 행복으로의 긍정심리학 전체 프로그램 계획안" loading="lazy"/>
+<img src="img/program01.png" data-en-src="img/program01_EN.png" alt="오클레어 치유프로그램 꽃피우는 마음 행복으로의 긍정심리학 전체 프로그램 계획안" data-en-alt="Oclair Healing Program — A Blooming Heart, Positive Psychology Toward Happiness, full program plan" loading="lazy"/>
 </figure>
 </article>
 <article class="featured-program-card">
 <div class="featured-program-meta">
 <div>
 <span class="featured-badge">REPRESENTATIVE 02</span>
-<h4>향기로 즐기는 오감 푸드테라피</h4>
-<p>마틴 셀리그만의 긍정심리학 PERMA 모델을 바탕으로 허브와 식용식물을 활용하여 오감 자극, 즐거움, 관계 형성, 의미 있는 활동을 연결한 치유음식 만들기 프로그램입니다.</p>
+<h4 data-en="Five-Sense Food Therapy Enjoyed Through Scent">향기로 즐기는 오감 푸드테라피</h4>
+<p data-en="A healing-food program based on Martin Seligman&rsquo;s PERMA model of positive psychology, using herbs and edible plants to connect five-sense stimulation, enjoyment, relationship-building, and meaningful activity.">마틴 셀리그만의 긍정심리학 PERMA 모델을 바탕으로 허브와 식용식물을 활용하여 오감 자극, 즐거움, 관계 형성, 의미 있는 활동을 연결한 치유음식 만들기 프로그램입니다.</p>
 </div>
-<div class="featured-program-tag">치유음식 만들기 · PERMA 모델</div>
+<div class="featured-program-tag" data-en="Healing Food Making · PERMA Model">치유음식 만들기 · PERMA 모델</div>
 </div>
 <figure class="featured-program-image">
-<img src="img/program02.png" alt="오클레어 치유프로그램 향기로 즐기는 오감 푸드테라피 전체 프로그램 계획안" loading="lazy"/>
+<img src="img/program02.png" data-en-src="img/program02_EN.png" alt="오클레어 치유프로그램 향기로 즐기는 오감 푸드테라피 전체 프로그램 계획안" data-en-alt="Oclair Healing Program — Five-Sense Food Therapy Enjoyed Through Scent, full program plan" loading="lazy"/>
 </figure>
 </article>
 </div>
 </div>
-<div class="program-grid-label">전체 프로그램 카테고리</div>
+<div class="program-grid-label" data-en="All Program Categories">전체 프로그램 카테고리</div>
 
 <div class="program-grid">
-<div class="program-card"><span class="program-num">PROGRAM 01</span><div class="program-title">어르신 치유농업 프로그램</div><div class="program-desc">손끝의 감각으로 만나는 식물과 흙. 어르신의 마음을 어루만지는 가장 부드러운 시간입니다.</div></div>
-<div class="program-card"><span class="program-num">PROGRAM 02</span><div class="program-title">경도인지장애 · 초기치매<br/>정서 치유</div><div class="program-desc">전문 프로그램으로 감각·기억·정서를 자극하며, 보호자와 함께하는 따뜻한 동행 프로그램입니다.</div></div>
-<div class="program-card"><span class="program-num">PROGRAM 03</span><div class="program-title">중년 여성 힐링 프로그램</div><div class="program-desc">나를 돌보는 시간. 허브 클래스, 정원 산책, 차담 — 잊었던 나의 호흡을 되찾습니다.</div></div>
-<div class="program-card"><span class="program-num">PROGRAM 04</span><div class="program-title">일반인 · 직장인 힐링</div><div class="program-desc">스트레스에서 벗어나 짧고 진하게. 자연 속에서 다시 일상을 시작할 수 있는 에너지를 채웁니다.</div></div>
-<div class="program-card"><span class="program-num">PROGRAM 05</span><div class="program-title">당일 / 1박 2일<br/>치유 숙박 프로그램</div><div class="program-desc">하룻밤의 깊은 쉼. 별빛과 새벽 안개, 정원의 하루를 온전히 느낄 수 있는 머무름의 시간입니다.</div></div>
+<div class="program-card"><span class="program-num">PROGRAM 01</span><div class="program-title" data-en="Senior Agro-Healing Program">어르신 치유농업 프로그램</div><div class="program-desc" data-en="Plants and soil met through the touch of fingertips. The gentlest time, soothing the hearts of our elders.">손끝의 감각으로 만나는 식물과 흙. 어르신의 마음을 어루만지는 가장 부드러운 시간입니다.</div></div>
+<div class="program-card"><span class="program-num">PROGRAM 02</span><div class="program-title" data-en="Mild Cognitive Impairment · Early Dementia<br/>Emotional Healing">경도인지장애 · 초기치매<br/>정서 치유</div><div class="program-desc" data-en="A specialized program that stimulates the senses, memory, and emotions — a warm companionship program shared with caregivers.">전문 프로그램으로 감각·기억·정서를 자극하며, 보호자와 함께하는 따뜻한 동행 프로그램입니다.</div></div>
+<div class="program-card"><span class="program-num">PROGRAM 03</span><div class="program-title" data-en="Healing Program for Midlife Women">중년 여성 힐링 프로그램</div><div class="program-desc" data-en="Time to care for yourself. Herb classes, garden walks, tea talks — regain the breath you had forgotten.">나를 돌보는 시간. 허브 클래스, 정원 산책, 차담 — 잊었던 나의 호흡을 되찾습니다.</div></div>
+<div class="program-card"><span class="program-num">PROGRAM 04</span><div class="program-title" data-en="Healing for Everyone · Working Professionals">일반인 · 직장인 힐링</div><div class="program-desc" data-en="Short and rich, away from stress. Refill the energy to begin everyday life again amid nature.">스트레스에서 벗어나 짧고 진하게. 자연 속에서 다시 일상을 시작할 수 있는 에너지를 채웁니다.</div></div>
+<div class="program-card"><span class="program-num">PROGRAM 05</span><div class="program-title" data-en="Day Trip / Overnight (2 Days)<br/>Healing Stay Program">당일 / 1박 2일<br/>치유 숙박 프로그램</div><div class="program-desc" data-en="One night of deep rest. A stay where you can fully feel the starlight, dawn mist, and a full day in the garden.">하룻밤의 깊은 쉼. 별빛과 새벽 안개, 정원의 하루를 온전히 느낄 수 있는 머무름의 시간입니다.</div></div>
 </div>
 </div>
 </section>
 <div class="image-break">
-<div class="image-break-text">— 만개한 메리골드, 가장 빛나는 가을의 풍경.</div>
+<div class="image-break-text" data-en="— Marigolds in full bloom, the most radiant scene of autumn.">— 만개한 메리골드, 가장 빛나는 가을의 풍경.</div>
 </div>
 <section class="audience">
 <div class="container">
 <div class="section-label">FOR YOU</div>
-<h2 class="section-title">이런 분들께 추천합니다</h2>
+<h2 class="section-title" data-en="Recommended for">이런 분들께 추천합니다</h2>
 <div class="audience-list">
-<div class="audience-item"><span class="audience-num">01</span><div class="audience-text">마음이 자주 지치는 분</div></div>
-<div class="audience-item"><span class="audience-num">02</span><div class="audience-text">업무 스트레스에서<br/>벗어나고 싶은 분</div></div>
-<div class="audience-item"><span class="audience-num">03</span><div class="audience-text">부모님과 함께할<br/>치유 공간을 찾는 분</div></div>
-<div class="audience-item"><span class="audience-num">04</span><div class="audience-text">자연 속에서<br/>천천히 쉬고 싶은 분</div></div>
-<div class="audience-item"><span class="audience-num">05</span><div class="audience-text">어르신 · 청소년 ·<br/>가족 단위 방문객</div></div>
-<div class="audience-item"><span class="audience-num">06</span><div class="audience-text">소규모 모임 · 단체<br/>맞춤 프로그램이 필요한 분</div></div>
+<div class="audience-item"><span class="audience-num">01</span><div class="audience-text" data-en="Those whose hearts often grow weary">마음이 자주 지치는 분</div></div>
+<div class="audience-item"><span class="audience-num">02</span><div class="audience-text" data-en="Those wanting to escape<br/>work stress">업무 스트레스에서<br/>벗어나고 싶은 분</div></div>
+<div class="audience-item"><span class="audience-num">03</span><div class="audience-text" data-en="Those seeking a healing space<br/>to share with parents">부모님과 함께할<br/>치유 공간을 찾는 분</div></div>
+<div class="audience-item"><span class="audience-num">04</span><div class="audience-text" data-en="Those wishing to rest slowly<br/>in nature">자연 속에서<br/>천천히 쉬고 싶은 분</div></div>
+<div class="audience-item"><span class="audience-num">05</span><div class="audience-text" data-en="Seniors · Youth ·<br/>Family visitors">어르신 · 청소년 ·<br/>가족 단위 방문객</div></div>
+<div class="audience-item"><span class="audience-num">06</span><div class="audience-text" data-en="Small gatherings · Groups<br/>needing tailored programs">소규모 모임 · 단체<br/>맞춤 프로그램이 필요한 분</div></div>
 </div>
 </div>
 </section>
 <section class="facilities" id="facilities">
 <div class="container">
 <div class="section-label">OUR SPACE</div>
-<h2 class="section-title">자연이 지어 준,<br/>치유의 공간</h2>
+<h2 class="section-title" data-en="A healing space,<br/>built by nature">자연이 지어 준,<br/>치유의 공간</h2>
 <div class="fac-grid">
-<div class="fac-block"><h3>농장 내 전용 공간</h3><ul><li>실내 학습장</li><li>사무실</li><li>정원</li><li>실내 쉼터</li><li>개구리 연못</li><li>야외 높임화단</li><li>탁 트인 전망</li></ul></div>
-<div class="fac-block"><h3>농장 주변 공유 공간</h3><ul><li>술바위 약수터</li><li>노인봉 등산로</li><li>풍기 인삼시장 (차량 10분)</li><li>소백산 국립공원 진입로</li><li>부석사 (차량 30분)</li></ul></div>
+<div class="fac-block"><h3 data-en="Private Spaces on the Farm">농장 내 전용 공간</h3><ul><li data-en="Indoor learning room">실내 학습장</li><li data-en="Office">사무실</li><li data-en="Garden">정원</li><li data-en="Indoor lounge">실내 쉼터</li><li data-en="Frog pond">개구리 연못</li><li data-en="Outdoor raised flower beds">야외 높임화단</li><li data-en="Open views">탁 트인 전망</li></ul></div>
+<div class="fac-block"><h3 data-en="Shared Spaces Nearby">농장 주변 공유 공간</h3><ul><li data-en="Sulbawi mineral spring">술바위 약수터</li><li data-en="Noinbong hiking trail">노인봉 등산로</li><li data-en="Punggi Ginseng Market (10 min by car)">풍기 인삼시장 (차량 10분)</li><li data-en="Mt. Sobaek National Park entrance">소백산 국립공원 진입로</li><li data-en="Buseoksa Temple (30 min by car)">부석사 (차량 30분)</li></ul></div>
 </div>
 </div>
 </section>
@@ -969,57 +992,57 @@ section { scroll-margin-top: 92px; }
 <div class="album-header">
 <div class="album-header-left">
 <div class="section-label">PHOTO ALBUM</div>
-<h2 class="section-title">농원의 시간들</h2>
-<p style="max-width:520px; color:var(--ink-soft);">계절이 지나가는 모습, 손님들과의 만남, 그리고 농원의 작은 순간들. 카테고리를 눌러 둘러보세요.</p>
+<h2 class="section-title" data-en="Moments of the Garden">농원의 시간들</h2>
+<p style="max-width:520px; color:var(--ink-soft);" data-en="The passing of the seasons, encounters with guests, and small moments at the garden. Tap a category to explore.">계절이 지나가는 모습, 손님들과의 만남, 그리고 농원의 작은 순간들. 카테고리를 눌러 둘러보세요.</p>
 </div>
 <div class="album-meta"><div class="album-meta-num album-meta-brand">Eau Claire</div><div class="album-meta-label">HEALING GARDEN</div></div>
 </div>
 <div class="filter-tabs">
-<button class="filter-tab active" data-cat="all">전체 <span class="count">43</span></button>
-<button class="filter-tab" data-cat="field">농장 풍경 <span class="count">07</span></button>
-<button class="filter-tab" data-cat="program">프로그램 <span class="count">23</span></button>
-<button class="filter-tab" data-cat="space">공간 <span class="count">13</span></button>
+<button class="filter-tab active" data-cat="all" data-en="All ">전체 <span class="count">43</span></button>
+<button class="filter-tab" data-cat="field" data-en="Landscape ">농장 풍경 <span class="count">07</span></button>
+<button class="filter-tab" data-cat="program" data-en="Programs ">프로그램 <span class="count">23</span></button>
+<button class="filter-tab" data-cat="space" data-en="Spaces ">공간 <span class="count">13</span></button>
 </div>
 <div class="album-grid">
-<div class="album-item wide" data-cat="field"><img alt="눈 내린 겨울 농장 전경" src="img/image_04.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">하얀 눈이 내려앉은 겨울 농장의 고요한 전경</div></div></div>
-<div class="album-item wide" data-cat="field"><img alt="겨울 들판과 소백산 능선" src="img/image_05.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">눈이 살짝 내려앉은 농장 높임화단과 멀리 보이는 산 풍경</div></div></div>
-<div class="album-item" data-cat="field"><img alt="눈 덮인 술바위 약수터" src="img/image_06.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">겨울 숲길 옆에 자리한 맑은 약수터</div></div></div>
-<div class="album-item wide" data-cat="field"><img alt="겨울 농원 입구와 카페 전경" src="img/image_07.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">눈이 남아 있는 길에서 바라본 오클레어의 전경</div></div></div>
-<div class="album-item wide" data-cat="field"><img alt="눈 내린 농원과 산 전망" src="img/image_08.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">구름 사이 빛이 내려오는 겨울 산자락의 농원 풍경</div></div></div>
-<div class="album-item tall" data-cat="field"><img alt="농장 전경" src="img/image_09.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 농장 풍경</div><div class="album-caption">소백산을 마주하는 들판</div></div></div>
-<div class="album-item" data-cat="program"><img alt="어르신 프로그램" src="img/image_10.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 어르신</div><div class="album-caption">함께한 치유의 시간</div></div></div>
-<div class="album-item" data-cat="program"><img alt="치유 클래스" src="img/image_11.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 클래스</div><div class="album-caption">허브와 마주한 손끝</div></div></div>
-<div class="album-item wide" data-cat="space"><img alt="실내 학습장" src="img/image_12.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 학습장</div><div class="album-caption">햇볕이 드는 실내 학습장의 오후</div></div></div>
-<div class="album-item" data-cat="field"><img alt="메리골드 들판" src="img/image_03.jpg"/><div class="album-overlay"><div class="album-cat">FIELD · 메리골드</div><div class="album-caption">만개한 메리골드의 가을</div></div></div>
-<div class="album-item" data-cat="space"><img alt="농원 건물 야경" src="img/image_02.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 건물</div><div class="album-caption">밤이 깊어진 정원의 빛</div></div></div>
-<div class="album-item" data-cat="program"><img alt="프로그램 준비 재료" src="img/image_13.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">감귤과 자연 재료를 준비하는 시간</div></div></div>
-<div class="album-item" data-cat="program"><img alt="꽃차 프로그램" src="img/image_14.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">창가에서 즐기는 따뜻한 차 한 잔</div></div></div>
-<div class="album-item wide" data-cat="program"><img alt="단체 치유 프로그램" src="img/image_15.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">함께 준비하고 나누는 농원의 오후</div></div></div>
-<div class="album-item" data-cat="program"><img alt="농원 방문 프로그램" src="img/image_16.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">자연 속에서 시작되는 치유의 시간</div></div></div>
-<div class="album-item" data-cat="program"><img alt="허브 음료 체험" src="img/image_17.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">꽃과 허브가 담긴 시원한 차</div></div></div>
-<div class="album-item wide" data-cat="program"><img alt="천연 염색 체험" src="img/image_18.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">햇살 아래 물드는 노란 천</div></div></div>
-<div class="album-item" data-cat="program"><img alt="염색 프로그램" src="img/image_19.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">자연의 색을 담아내는 손끝 체험</div></div></div>
-<div class="album-item wide" data-cat="program"><img alt="꽃 수확 체험" src="img/image_20.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">하얀 꽃을 고르고 말리는 시간</div></div></div>
-<div class="album-item" data-cat="program"><img alt="꽃 건조 프로그램" src="img/image_21.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">오렌지빛 꽃을 정성껏 말리는 과정</div></div></div>
-<div class="album-item" data-cat="program"><img alt="수제청 만들기" src="img/image_22.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">계절 과일을 담은 달콤한 체험</div></div></div>
-<div class="album-item wide" data-cat="program"><img alt="과일청 클래스" src="img/image_23.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">함께 완성한 수제청과 신선한 과일</div></div></div>
-<div class="album-item" data-cat="program"><img alt="정원 치유 프로그램" src="img/image_24.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">비 온 뒤 농원을 바라보는 고요한 시간</div></div></div>
-<div class="album-item" data-cat="program"><img alt="꽃차 재료 준비" src="img/image_25.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">노란 꽃향기가 가득한 프로그램 재료</div></div></div>
-<div class="album-item" data-cat="program"><img alt="건조 과일 공예" src="img/image_26.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">말린 감귤에 따뜻한 손길을 더하다</div></div></div>
-<div class="album-item wide" data-cat="space"><img alt="농원 진입로와 전경" src="img/image_16.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 전경</div><div class="album-caption">소백산을 마주하는 농원의 탁 트인 전경</div></div></div>
-<div class="album-item wide" data-cat="space"><img alt="야외 높임화단" src="img/image_27.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 정원</div><div class="album-caption">계절 식물을 준비하는 야외 높임화단</div></div></div>
-<div class="album-item wide" data-cat="space"><img alt="전망 쉼터" src="img/image_28.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 전망</div><div class="album-caption">산자락 풍경을 배경으로 머무는 쉼의 자리</div></div></div>
-<div class="album-item wide" data-cat="space"><img alt="개구리 연못" src="img/image_29.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 연못</div><div class="album-caption">돌담과 물빛이 어우러진 개구리 연못</div></div></div>
-<div class="album-item wide" data-cat="space"><img alt="농원 야경" src="img/image_30.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 야외 공간</div><div class="album-caption">밤에도 따뜻하게 빛나는 농원의 마당</div></div></div>
-<div class="album-item" data-cat="program"><img alt="숲길을 지나 농원으로 향하는 프로그램의 시작" src="img/image_31.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">숲길을 지나 농원으로 향하는 프로그램의 시작</div></div></div>
-<div class="album-item" data-cat="program"><img alt="겨울 주방에서 함께 준비하는 체험 시간" src="img/image_32.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">겨울 주방에서 함께 준비하는 체험 시간</div></div></div>
-<div class="album-item" data-cat="program"><img alt="눈 내린 창밖을 보며 함께하는 조리 체험" src="img/image_33.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">눈 내린 창밖을 보며 함께하는 조리 체험</div></div></div>
-<div class="album-item" data-cat="program"><img alt="전망대에서 바라본 지역 풍경 체험" src="img/image_34.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">전망대에서 바라본 지역 풍경 체험</div></div></div>
-<div class="album-item" data-cat="program"><img alt="차와 이야기가 오간 실내 프로그램" src="img/image_35.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">차와 이야기가 오간 실내 프로그램</div></div></div>
-<div class="album-item" data-cat="program"><img alt="액자에 담긴 전망대 프로그램의 기억" src="img/image_36.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">액자에 담긴 전망대 프로그램의 기억</div></div></div>
-<div class="album-item" data-cat="program"><img alt="텃밭 활동이 담긴 프로그램 기록" src="img/image_37.jpg"/><div class="album-overlay"><div class="album-cat">PROGRAM · 체험</div><div class="album-caption">텃밭 활동이 담긴 프로그램 기록</div></div></div>
-<div class="album-item" data-cat="space"><img alt="유리 티포트와 따뜻한 차가 놓인 테이블 풍경" src="img/image_38.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 쉼</div><div class="album-caption">따뜻한 차 한 잔으로 쉬어 가는 실내 쉼터</div></div></div><div class="album-item" data-cat="space"><img alt="꽃잎이 담긴 시원한 음료를 위에서 내려다본 모습" src="img/image_39.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 티타임</div><div class="album-caption">꽃잎이 더해진 시원한 음료의 순간</div></div></div><div class="album-item" data-cat="space"><img alt="주황색 꽃 위에 앉아 있는 벌의 모습" src="img/image_40.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 정원</div><div class="album-caption">주황빛 꽃 위로 찾아온 작은 손님</div></div></div><div class="album-item" data-cat="space"><img alt="분홍색 코스모스 꽃이 피어 있는 모습" src="img/image_41.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 꽃</div><div class="album-caption">실내를 밝히는 코스모스의 부드러운 색감</div></div></div><div class="album-item" data-cat="space"><img alt="푸른 잎 사이로 맺힌 붉은 열매의 모습" src="img/image_42.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 계절</div><div class="album-caption">계절을 알리는 붉은 열매의 풍경</div></div></div><div class="album-item" data-cat="space"><img alt="분홍색 꽃이 핀 다육식물 화분의 모습" src="img/image_43.jpg"/><div class="album-overlay"><div class="album-cat">SPACE · 식물</div><div class="album-caption">창가 화분에서 피어난 작은 다육 꽃</div></div></div></div>
-<div class="album-more"><a data-filter="all" href="#album" id="show-all-photos">전체 사진 보기  →</a></div>
+<div class="album-item wide" data-cat="field"><img alt="눈 내린 겨울 농장 전경" src="img/image_04.jpg"/><div class="album-overlay"><div class="album-cat" data-en="FIELD · Landscape">FIELD · 농장 풍경</div><div class="album-caption" data-en="A quiet winter farm under a blanket of white snow">하얀 눈이 내려앉은 겨울 농장의 고요한 전경</div></div></div>
+<div class="album-item wide" data-cat="field"><img alt="겨울 들판과 소백산 능선" src="img/image_05.jpg"/><div class="album-overlay"><div class="album-cat" data-en="FIELD · Landscape">FIELD · 농장 풍경</div><div class="album-caption" data-en="Lightly snow-dusted raised beds with distant mountains">눈이 살짝 내려앉은 농장 높임화단과 멀리 보이는 산 풍경</div></div></div>
+<div class="album-item" data-cat="field"><img alt="눈 덮인 술바위 약수터" src="img/image_06.jpg"/><div class="album-overlay"><div class="album-cat" data-en="FIELD · Landscape">FIELD · 농장 풍경</div><div class="album-caption" data-en="A clear mineral spring beside a winter forest path">겨울 숲길 옆에 자리한 맑은 약수터</div></div></div>
+<div class="album-item wide" data-cat="field"><img alt="겨울 농원 입구와 카페 전경" src="img/image_07.jpg"/><div class="album-overlay"><div class="album-cat" data-en="FIELD · Landscape">FIELD · 농장 풍경</div><div class="album-caption" data-en="A view of Eau Claire from a snow-lined path">눈이 남아 있는 길에서 바라본 오클레어의 전경</div></div></div>
+<div class="album-item wide" data-cat="field"><img alt="눈 내린 농원과 산 전망" src="img/image_08.jpg"/><div class="album-overlay"><div class="album-cat" data-en="FIELD · Landscape">FIELD · 농장 풍경</div><div class="album-caption" data-en="Light breaking through clouds over the winter foothills">구름 사이 빛이 내려오는 겨울 산자락의 농원 풍경</div></div></div>
+<div class="album-item tall" data-cat="field"><img alt="농장 전경" src="img/image_09.jpg"/><div class="album-overlay"><div class="album-cat" data-en="FIELD · Landscape">FIELD · 농장 풍경</div><div class="album-caption" data-en="A field facing Mt. Sobaek">소백산을 마주하는 들판</div></div></div>
+<div class="album-item" data-cat="program"><img alt="어르신 프로그램" src="img/image_10.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Seniors">PROGRAM · 어르신</div><div class="album-caption" data-en="A shared time of healing">함께한 치유의 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="치유 클래스" src="img/image_11.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Class">PROGRAM · 클래스</div><div class="album-caption" data-en="Fingertips meeting the herbs">허브와 마주한 손끝</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="실내 학습장" src="img/image_12.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Learning Room">SPACE · 학습장</div><div class="album-caption" data-en="An afternoon in the sunlit indoor learning room">햇볕이 드는 실내 학습장의 오후</div></div></div>
+<div class="album-item" data-cat="field"><img alt="메리골드 들판" src="img/image_03.jpg"/><div class="album-overlay"><div class="album-cat" data-en="FIELD · Marigold">FIELD · 메리골드</div><div class="album-caption" data-en="Autumn with marigolds in full bloom">만개한 메리골드의 가을</div></div></div>
+<div class="album-item" data-cat="space"><img alt="농원 건물 야경" src="img/image_02.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Building">SPACE · 건물</div><div class="album-caption" data-en="The light of the garden deep into the night">밤이 깊어진 정원의 빛</div></div></div>
+<div class="album-item" data-cat="program"><img alt="프로그램 준비 재료" src="img/image_13.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="Preparing citrus and natural ingredients">감귤과 자연 재료를 준비하는 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="꽃차 프로그램" src="img/image_14.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A warm cup of tea by the window">창가에서 즐기는 따뜻한 차 한 잔</div></div></div>
+<div class="album-item wide" data-cat="program"><img alt="단체 치유 프로그램" src="img/image_15.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="An afternoon of preparing and sharing together">함께 준비하고 나누는 농원의 오후</div></div></div>
+<div class="album-item" data-cat="program"><img alt="농원 방문 프로그램" src="img/image_16.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A time of healing that begins in nature">자연 속에서 시작되는 치유의 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="허브 음료 체험" src="img/image_17.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A cool tea steeped with flowers and herbs">꽃과 허브가 담긴 시원한 차</div></div></div>
+<div class="album-item wide" data-cat="program"><img alt="천연 염색 체험" src="img/image_18.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="Yellow fabric dyeing in the sunlight">햇살 아래 물드는 노란 천</div></div></div>
+<div class="album-item" data-cat="program"><img alt="염색 프로그램" src="img/image_19.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A hands-on experience capturing nature&rsquo;s colors">자연의 색을 담아내는 손끝 체험</div></div></div>
+<div class="album-item wide" data-cat="program"><img alt="꽃 수확 체험" src="img/image_20.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="Selecting and drying white flowers">하얀 꽃을 고르고 말리는 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="꽃 건조 프로그램" src="img/image_21.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="Carefully drying orange-hued flowers">오렌지빛 꽃을 정성껏 말리는 과정</div></div></div>
+<div class="album-item" data-cat="program"><img alt="수제청 만들기" src="img/image_22.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A sweet experience with seasonal fruit">계절 과일을 담은 달콤한 체험</div></div></div>
+<div class="album-item wide" data-cat="program"><img alt="과일청 클래스" src="img/image_23.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="Handmade fruit syrup and fresh fruit, finished together">함께 완성한 수제청과 신선한 과일</div></div></div>
+<div class="album-item" data-cat="program"><img alt="정원 치유 프로그램" src="img/image_24.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A quiet moment looking over the garden after rain">비 온 뒤 농원을 바라보는 고요한 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="꽃차 재료 준비" src="img/image_25.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="Program materials filled with the scent of yellow flowers">노란 꽃향기가 가득한 프로그램 재료</div></div></div>
+<div class="album-item" data-cat="program"><img alt="건조 과일 공예" src="img/image_26.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="Adding a warm touch to dried citrus">말린 감귤에 따뜻한 손길을 더하다</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="농원 진입로와 전경" src="img/image_16.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · View">SPACE · 전경</div><div class="album-caption" data-en="The garden&rsquo;s open view facing Mt. Sobaek">소백산을 마주하는 농원의 탁 트인 전경</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="야외 높임화단" src="img/image_27.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Garden">SPACE · 정원</div><div class="album-caption" data-en="Outdoor raised beds being prepared with seasonal plants">계절 식물을 준비하는 야외 높임화단</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="전망 쉼터" src="img/image_28.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Vista">SPACE · 전망</div><div class="album-caption" data-en="A resting spot set against the mountain foothills">산자락 풍경을 배경으로 머무는 쉼의 자리</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="개구리 연못" src="img/image_29.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Pond">SPACE · 연못</div><div class="album-caption" data-en="A frog pond where stone walls meet the gleam of water">돌담과 물빛이 어우러진 개구리 연못</div></div></div>
+<div class="album-item wide" data-cat="space"><img alt="농원 야경" src="img/image_30.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Outdoor">SPACE · 야외 공간</div><div class="album-caption" data-en="The garden courtyard glowing warmly at night">밤에도 따뜻하게 빛나는 농원의 마당</div></div></div>
+<div class="album-item" data-cat="program"><img alt="숲길을 지나 농원으로 향하는 프로그램의 시작" src="img/image_31.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A program beginning, heading to the garden through the woods">숲길을 지나 농원으로 향하는 프로그램의 시작</div></div></div>
+<div class="album-item" data-cat="program"><img alt="겨울 주방에서 함께 준비하는 체험 시간" src="img/image_32.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A hands-on session prepared together in the winter kitchen">겨울 주방에서 함께 준비하는 체험 시간</div></div></div>
+<div class="album-item" data-cat="program"><img alt="눈 내린 창밖을 보며 함께하는 조리 체험" src="img/image_33.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A cooking experience shared while watching the snow outside">눈 내린 창밖을 보며 함께하는 조리 체험</div></div></div>
+<div class="album-item" data-cat="program"><img alt="전망대에서 바라본 지역 풍경 체험" src="img/image_34.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="Taking in the local scenery from the observation deck">전망대에서 바라본 지역 풍경 체험</div></div></div>
+<div class="album-item" data-cat="program"><img alt="차와 이야기가 오간 실내 프로그램" src="img/image_35.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="An indoor program of tea and conversation">차와 이야기가 오간 실내 프로그램</div></div></div>
+<div class="album-item" data-cat="program"><img alt="액자에 담긴 전망대 프로그램의 기억" src="img/image_36.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A framed memory of the observation-deck program">액자에 담긴 전망대 프로그램의 기억</div></div></div>
+<div class="album-item" data-cat="program"><img alt="텃밭 활동이 담긴 프로그램 기록" src="img/image_37.jpg"/><div class="album-overlay"><div class="album-cat" data-en="PROGRAM · Hands-on">PROGRAM · 체험</div><div class="album-caption" data-en="A record of a kitchen-garden program">텃밭 활동이 담긴 프로그램 기록</div></div></div>
+<div class="album-item" data-cat="space"><img alt="유리 티포트와 따뜻한 차가 놓인 테이블 풍경" src="img/image_38.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Rest">SPACE · 쉼</div><div class="album-caption" data-en="An indoor lounge to rest with a warm cup of tea">따뜻한 차 한 잔으로 쉬어 가는 실내 쉼터</div></div></div><div class="album-item" data-cat="space"><img alt="꽃잎이 담긴 시원한 음료를 위에서 내려다본 모습" src="img/image_39.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Tea Time">SPACE · 티타임</div><div class="album-caption" data-en="A moment with a cool drink touched by flower petals">꽃잎이 더해진 시원한 음료의 순간</div></div></div><div class="album-item" data-cat="space"><img alt="주황색 꽃 위에 앉아 있는 벌의 모습" src="img/image_40.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Garden">SPACE · 정원</div><div class="album-caption" data-en="A small visitor arriving on an orange blossom">주황빛 꽃 위로 찾아온 작은 손님</div></div></div><div class="album-item" data-cat="space"><img alt="분홍색 코스모스 꽃이 피어 있는 모습" src="img/image_41.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Flowers">SPACE · 꽃</div><div class="album-caption" data-en="The soft hues of cosmos brightening the interior">실내를 밝히는 코스모스의 부드러운 색감</div></div></div><div class="album-item" data-cat="space"><img alt="푸른 잎 사이로 맺힌 붉은 열매의 모습" src="img/image_42.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Season">SPACE · 계절</div><div class="album-caption" data-en="Red berries announcing the season">계절을 알리는 붉은 열매의 풍경</div></div></div><div class="album-item" data-cat="space"><img alt="분홍색 꽃이 핀 다육식물 화분의 모습" src="img/image_43.jpg"/><div class="album-overlay"><div class="album-cat" data-en="SPACE · Plants">SPACE · 식물</div><div class="album-caption" data-en="A tiny succulent flower blooming in a windowsill pot">창가 화분에서 피어난 작은 다육 꽃</div></div></div></div>
+<div class="album-more"><a data-filter="all" href="#album" id="show-all-photos" data-en="View all photos  →">전체 사진 보기  →</a></div>
 </div>
 </section>
 <!-- ============ 게시판 ============ -->
@@ -1027,36 +1050,36 @@ section { scroll-margin-top: 92px; }
 <div class="container">
 <div class="notice-header">
 <div class="notice-header-left">
-<div class="section-label">NOTICE  ·  게시판</div>
-<h2 class="section-title">오클레어의 소식</h2>
-<p style="max-width:520px; color:var(--ink-soft);">새로운 프로그램, 계절 안내, 농원의 일상을 전해 드립니다.<br/>더 자세한 소식과 사진은 <a href="https://blog.naver.com/nadalove123" rel="noopener" style="color:var(--accent); text-decoration:underline;" target="_blank">네이버 블로그</a>에서 확인하실 수 있습니다.</p>
+<div class="section-label" data-en="NOTICE  ·  NEWS">NOTICE  ·  게시판</div>
+<h2 class="section-title" data-en="News from Eau Claire">오클레어의 소식</h2>
+<p style="max-width:520px; color:var(--ink-soft);" data-en="We share new programs, seasonal notices, and everyday life at the garden.<br/>For more news and photos, please visit our <a href=&quot;https://blog.naver.com/nadalove123&quot; rel=&quot;noopener&quot; style=&quot;color:var(--accent); text-decoration:underline;&quot; target=&quot;_blank&quot;>Naver blog</a>.">새로운 프로그램, 계절 안내, 농원의 일상을 전해 드립니다.<br/>더 자세한 소식과 사진은 <a href="https://blog.naver.com/nadalove123" rel="noopener" style="color:var(--accent); text-decoration:underline;" target="_blank">네이버 블로그</a>에서 확인하실 수 있습니다.</p>
 </div>
 </div>
 <div class="notice-list">
 <a class="notice-item" href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank">
 <div class="notice-date">2026 · 04 · 20</div>
-<div><span class="notice-cat notice-cat-pin">공  지</span></div>
+<div><span class="notice-cat notice-cat-pin" data-en="NOTICE">공  지</span></div>
 <div class="notice-content">
-<div class="notice-title">5월 라벤더 · 로즈마리 클래스 모집 안내</div>
-<div class="notice-excerpt">봄 향기 가득한 허브를 직접 매만지며 만드는 4주 클래스. 4월 30일까지 카카오 채널로 신청 받습니다.</div>
+<div class="notice-title" data-en="May Lavender · Rosemary Class — Now Accepting Applications">5월 라벤더 · 로즈마리 클래스 모집 안내</div>
+<div class="notice-excerpt" data-en="A 4-week class handcrafting herbs full of spring fragrance. Apply via our Kakao channel by April 30.">봄 향기 가득한 허브를 직접 매만지며 만드는 4주 클래스. 4월 30일까지 카카오 채널로 신청 받습니다.</div>
 </div>
 <div class="notice-arrow">→</div>
 </a>
 <a class="notice-item" href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank">
 <div class="notice-date">2026 · 04 · 05</div>
-<div><span class="notice-cat notice-cat-prog">프로그램</span></div>
+<div><span class="notice-cat notice-cat-prog" data-en="PROGRAM">프로그램</span></div>
 <div class="notice-content">
-<div class="notice-title">어르신 정서 치유 프로그램 5월 일정 안내</div>
-<div class="notice-excerpt">경도인지장애 어르신 대상 8회기 프로그램이 5월 둘째 주부터 시작됩니다. 보호자 상담 함께 진행.</div>
+<div class="notice-title" data-en="May Schedule for the Senior Emotional Healing Program">어르신 정서 치유 프로그램 5월 일정 안내</div>
+<div class="notice-excerpt" data-en="An 8-session program for seniors with mild cognitive impairment begins the second week of May. Caregiver counseling included.">경도인지장애 어르신 대상 8회기 프로그램이 5월 둘째 주부터 시작됩니다. 보호자 상담 함께 진행.</div>
 </div>
 <div class="notice-arrow">→</div>
 </a>
 <a class="notice-item" href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank">
 <div class="notice-date">2026 · 03 · 18</div>
-<div><span class="notice-cat notice-cat-diary">농장 일기</span></div>
+<div><span class="notice-cat notice-cat-diary" data-en="FARM DIARY">농장 일기</span></div>
 <div class="notice-content">
-<div class="notice-title">올해의 메리골드, 식재를 마쳤습니다</div>
-<div class="notice-excerpt">5천여 그루의 메리골드 모종을 심었습니다. 8월 말부터 절정의 풍경을 만나실 수 있습니다.</div>
+<div class="notice-title" data-en="This Year&rsquo;s Marigolds Have Been Planted">올해의 메리골드, 식재를 마쳤습니다</div>
+<div class="notice-excerpt" data-en="We planted about 5,000 marigold seedlings. The peak scenery can be enjoyed from late August.">5천여 그루의 메리골드 모종을 심었습니다. 8월 말부터 절정의 풍경을 만나실 수 있습니다.</div>
 </div>
 <div class="notice-arrow">→</div>
 </a>
@@ -1064,8 +1087,8 @@ section { scroll-margin-top: 92px; }
 <div class="notice-date">2026 · 03 · 02</div>
 <div><span class="notice-cat notice-cat-pin">공  지</span></div>
 <div class="notice-content">
-<div class="notice-title">봄 시즌 운영 안내 · 사전 예약 부탁드립니다</div>
-<div class="notice-excerpt">3월 첫 주부터 정상 운영합니다. 모든 방문은 사전 예약제이오니 카카오 채널로 문의 부탁드립니다.</div>
+<div class="notice-title" data-en="Spring Season Hours · Please Reserve in Advance">봄 시즌 운영 안내 · 사전 예약 부탁드립니다</div>
+<div class="notice-excerpt" data-en="We resume normal operations from the first week of March. All visits are by reservation — please inquire via our Kakao channel.">3월 첫 주부터 정상 운영합니다. 모든 방문은 사전 예약제이오니 카카오 채널로 문의 부탁드립니다.</div>
 </div>
 <div class="notice-arrow">→</div>
 </a>
@@ -1073,37 +1096,37 @@ section { scroll-margin-top: 92px; }
 <div class="notice-date">2026 · 02 · 10</div>
 <div><span class="notice-cat notice-cat-prog">프로그램</span></div>
 <div class="notice-content">
-<div class="notice-title">1박 2일 직장인 힐링 패키지 신규 오픈</div>
-<div class="notice-excerpt">주말을 활용한 깊은 쉼. 정원 산책, 허브 클래스, 별빛 명상이 포함된 패키지를 선보입니다.</div>
+<div class="notice-title" data-en="New: Overnight (2-Day) Healing Package for Working Professionals">1박 2일 직장인 힐링 패키지 신규 오픈</div>
+<div class="notice-excerpt" data-en="Deep rest over the weekend. A package including garden walks, herb classes, and starlight meditation.">주말을 활용한 깊은 쉼. 정원 산책, 허브 클래스, 별빛 명상이 포함된 패키지를 선보입니다.</div>
 </div>
 <div class="notice-arrow">→</div>
 </a>
 </div>
 <div class="notice-more">
-<span class="notice-more-text">— 농원의 일상과 더 많은 소식은 네이버 블로그에서 만나보세요.</span>
-<a href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank">전체 글 보기 →</a>
+<span class="notice-more-text" data-en="— Find more of the garden&rsquo;s daily life and news on our Naver blog.">— 농원의 일상과 더 많은 소식은 네이버 블로그에서 만나보세요.</span>
+<a href="https://blog.naver.com/nadalove123" rel="noopener" target="_blank" data-en="View all posts →">전체 글 보기 →</a>
 </div>
 </div>
 </section>
 <section class="contact" id="contact">
 <div class="container">
 <div class="section-label">VISIT US</div>
-<h2 class="section-title">오시는 길 · 사전 예약 안내</h2>
-<p style="max-width:520px; margin:0 auto; color:var(--ink-soft);">소규모 예약제로 운영됩니다. 방문 전 카카오 채널 또는 전화로 사전 문의 부탁드립니다.</p>
+<h2 class="section-title" data-en="Getting Here · Reservation Info">오시는 길 · 사전 예약 안내</h2>
+<p style="max-width:520px; margin:0 auto; color:var(--ink-soft);" data-en="We operate by small-group reservation. Please inquire in advance via our Kakao channel or by phone before visiting.">소규모 예약제로 운영됩니다. 방문 전 카카오 채널 또는 전화로 사전 문의 부탁드립니다.</p>
 <div class="contact-card">
-<div class="contact-row"><div class="contact-label">Address</div><div class="contact-value">경북 영주시 풍기읍<br/>안풍로 308번길 119</div></div>
+<div class="contact-row"><div class="contact-label">Address</div><div class="contact-value" data-en="119, Anpung-ro 308beon-gil,<br/>Punggi-eup, Yeongju, Gyeongbuk">경북 영주시 풍기읍<br/>안풍로 308번길 119</div></div>
 <div class="contact-row"><div class="contact-label">Tel</div><div class="contact-value"><a href="tel:01033988911">010 — 3398 — 8911</a></div></div>
-<div class="contact-row"><div class="contact-label">Kakao</div><div class="contact-value">오클레어 치유농원 (채널 검색)</div></div>
+<div class="contact-row"><div class="contact-label">Kakao</div><div class="contact-value" data-en="Search &lsquo;Eau Claire Healing Garden&rsquo; channel">오클레어 치유농원 (채널 검색)</div></div>
 <div class="contact-row"><div class="contact-label">Website</div><div class="contact-value"><a href="https://pg-eauclaire.github.io" target="_blank">pg-eauclaire.github.io</a></div></div>
 <div class="contact-row"><div class="contact-label">Blog</div><div class="contact-value"><a href="https://m.blog.naver.com/nadalove123" target="_blank">blog.naver.com/nadalove123</a></div></div>
-<div class="contact-cta">소규모 예약제 운영 · 사전 문의 필수</div>
+<div class="contact-cta" data-en="By small-group reservation · Advance inquiry required">소규모 예약제 운영 · 사전 문의 필수</div>
 </div>
 </div>
 </section>
 <footer>
 <div class="brand">EAU CLAIRE</div>
-<div>오클레어 치유농원 · Eau Claire Healing Garden</div>
-<div style="margin-top:6px;">© 오늘, 행복을 담다 · 풍기 치유농원 오클레어</div>
+<div data-en="Eau Claire Healing Garden">오클레어 치유농원 · Eau Claire Healing Garden</div>
+<div style="margin-top:6px;" data-en="© Today, we hold happiness · Eau Claire Healing Garden, Punggi">© 오늘, 행복을 담다 · 풍기 치유농원 오클레어</div>
 </footer>
 <script>
 document.querySelectorAll('.filter-tab').forEach(function(tab) {
@@ -1138,6 +1161,62 @@ document.querySelectorAll('.album-more a[data-filter="all"]').forEach(function(l
     if (album) album.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+</script>
+<script id="lang-toggle-js">
+(function () {
+  var KO_LABEL = 'KO';
+  var EN_LABEL = 'EN';
+  var btn = document.getElementById('lang-toggle');
+
+  // Cache the original Korean innerHTML for every element that has an English version.
+  var nodes = document.querySelectorAll('[data-en]');
+  nodes.forEach(function (el) {
+    el.setAttribute('data-ko', el.innerHTML);
+  });
+
+  // Cache the original Korean src/alt for images that have a language-specific version.
+  var imgNodes = document.querySelectorAll('img[data-en-src]');
+  imgNodes.forEach(function (img) {
+    img.setAttribute('data-ko-src', img.getAttribute('src'));
+    img.setAttribute('data-ko-alt', img.getAttribute('alt') || '');
+  });
+
+  function applyLang(lang) {
+    var en = (lang === 'en');
+    nodes.forEach(function (el) {
+      el.innerHTML = en ? el.getAttribute('data-en') : el.getAttribute('data-ko');
+    });
+    imgNodes.forEach(function (img) {
+      img.setAttribute('src', en ? img.getAttribute('data-en-src') : img.getAttribute('data-ko-src'));
+      img.setAttribute('alt', en ? (img.getAttribute('data-en-alt') || '') : img.getAttribute('data-ko-alt'));
+    });
+    document.documentElement.lang = en ? 'en' : 'ko';
+    if (btn) {
+      btn.textContent = en ? KO_LABEL : EN_LABEL;
+      btn.setAttribute('aria-label', en ? 'Switch to Korean' : 'Switch to English');
+    }
+    try { history.replaceState(null, '', en ? '#en' : '#ko'); } catch (e) {
+      location.hash = en ? 'en' : 'ko';
+    }
+  }
+
+  function currentLangFromHash() {
+    return (location.hash.replace('#', '').toLowerCase() === 'en') ? 'en' : 'ko';
+  }
+
+  if (btn) {
+    btn.addEventListener('click', function () {
+      applyLang(document.documentElement.lang === 'en' ? 'ko' : 'en');
+    });
+  }
+
+  window.addEventListener('hashchange', function () {
+    applyLang(currentLangFromHash());
+  });
+
+  // Initialize from the URL hash (so /#en opens directly in English).
+  applyLang(currentLangFromHash());
+})();
 </script>
 </body>
 </html>
